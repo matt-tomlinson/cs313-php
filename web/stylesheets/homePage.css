@@ -32,6 +32,11 @@ li a {
 .backgd {
   background-color: #fef6eb;
 }
+.outsidePicBorder {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+
+}
 /*Picture Morph*/
 .pic {
     overflow: hidden;
@@ -56,7 +61,40 @@ li a {
       -ms-transform: rotate(360deg);
           transform: rotate(360deg);
 }
+h2 {
+  display: inline-block;
+  padding: 0 15px;
+  position: relative;
+}
+h2:before, h2:after {
+  background: #96c0ce;
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+    top: 50%;
+  width: 100%;
+}
 
+h2:before {
+  right: 100%;
+}
+
+h2:after {
+  left: 100%;
+}
+
+.mainContent {
+  text-align:left;
+  padding:15px;
+}
+.container {
+  overflow: hidden;
+  text-align: center;
+}
+.center-text {
+  text-align:center;
+}
 /* Footer */
 .footer-default {
     background-color: #96c0ce; /* Black Gray */
