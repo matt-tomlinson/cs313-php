@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/homePage.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/homePage.js"></script>
 </head>
 <body>
   <!-- Navbar -->
@@ -50,7 +51,7 @@
       <div class="col-sm-3">
         <h3>Hunter &amp; Shayla</h3>
         <div class="morph pic">
-          <img alt="Shayla and Hunter at Navuoo" class="img-responsive" src="images/navuoo.jpg" />
+          <img id="myImage" alt="Shayla and Hunter at Navuoo" class="img-responsive" src="images/navuoo.jpg" onmouseover="hover(this);" onmouseout="unhover(this);"/>
         </div>
         <div class="panel panel-primary">
           <div class="panel-heading"><h4>Contact Me</h4></div>
