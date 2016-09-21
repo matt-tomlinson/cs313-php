@@ -48,7 +48,7 @@ session_start();
 	</nav>
 
 	<!-- First Container -->
-	<div class="container-fluid backgd"> 
+	<div class="container-fluid backgd">
 		<div class="row">
 			<div class="col-sm-12">
 			<?php
