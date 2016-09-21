@@ -1,0 +1,63 @@
+body
+{
+    background-color:#E6E6E6;
+}
+.headBox {
+    background-color:#4B5765;
+    border: solid black 3px;
+    display:flex;
+    flex-wrap: wrap;
+}
+.colorFiles{
+    max-width: 100%;
+    height: 80px;
+}
+.leftImg{
+}
+.leftHeadBox{
+    flex-grow: 1;
+}
+.midHeadBox{
+    flex-grow: 20;
+    background-color:#424242;
+}
+.rightHeadBox{
+    flex-grow: 1;
+    text-align: right;
+    background-color:#424242;
+}
+.headerText{
+    font-family: Trebuchet;
+    font-weight: lighter;
+    font-size: 25px;
+    color:#FAFAFA;
+    padding-right: 10px;
+}
+.subHeaderText{
+    font-family: Trebuchet;
+    font-weight: lighter;
+    font-size: 15px;
+    color:#FAFAFA;
+}
+.titleText{
+    font-family: Trebuchet;
+    font-weight: lighter;
+    color:#FAFAFA;
+    font-size: 25px;
+    padding-left: 10px;
+}
+.name{
+    font-family: Trebuchet;
+    font-weight: lighter;
+    color:#FAFAFA;
+    font-size: 25px;
+    padding-right: 10px;
+}
+a:link,a:visited
+{
+    
+}
+a:hover
+{
+    
+}
