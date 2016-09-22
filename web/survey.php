@@ -1,8 +1,60 @@
 <?php
 	session_start();
-	if (isset($_SESSION["takenSurvey"])) {
-		header('Location: surveyResults.php');
+	if ($_SERVER['REQUEST_METHOD']== "POST") {
+		$valid = true;
+		$error = "";
+
+		if (empty($_POST["Political-Party"])) {
+			$error .= "<li>You forgot to pick a Political Party</li>"
+			$valid = false; // false
+		}
+		if (empty($_POST["Direction"])) {
+			$error .= "li>You forgot to pick whether you think this country is going in the right direction</li>";
+			$valid = false; // false
+		}
+		if (empty($_POST["Candidate"])) {
+			$error .= "li>You forgot to pick a candidate</li>";
+			$valid = false; // false
+		}
+		if (empty($_POST["Watch-Debate"])) {
+			$error .= "li>You forgot to pick whether you watched the debate.</li>";
+			$valid = false; // false
+		}
+		if (empty($_POST["Changed-Vote"])) {
+			$error .= "li>You forgot to pick if the debate changed your vote.</li>";
+			$valid = false; // false
+		}
+		if (empty($_POST["Age"])) {
+			$error .= "li>You forgot to pick age group.</li>";
+			$valid = false; // false
+		}
+		if (empty($_POST["Race"])) {
+			$error .= "li>You forgot to pick race.</li>";
+			$valid = false; // false
+		}
+		if (empty($_POST["Gender"])) {
+			$error .= "li>You forgot to pick gender.</li>"
+			$valid = false; // false
+		}
+		if ($error != "") {
+
+		} else {
+
+		}
 	}
+	$pol_party = $_POST["Political-Party"];
+	$dir = $_POST["Direction"];
+	$cand = $_POST["Candidate"];
+	$wat_debate = $_POST["Watch-Debate"];
+	$cha_vote = $_POST["Changed-Vote"];
+	$vot_age = $_POST["Age"];
+	$vot_race = $_POST["Race"];
+	$vot_gender = $_POST["Gender"];
+
+	/*if (isset($_SESSION["takenSurvey"])) {
+		header('Location: https://tranquil-garden-61392.herokuapp.com/surveyResults.php');
+		exit(); // for security use exit function after redirect
+	}*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +106,13 @@
 	<div class="container-fluid backgd">
 		<div class="row">
 			<div class="col-sm-12">
-				<form method="post" id="survey" action="surveyResults.php">
+				<?php
+					if(!empty($error)) {
+						echo("<p>There was an error with your survery submission:</p>\n");
+						echo("<ul>" . $error . "</ul>\n");
+					}
+				?>
+				<form method="post" id="survey" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 					What Political Party do you associate yourself with?<br/>
 					<input type="radio" name="Political-Party" id="republican" value="Republican"> Republican<br/>
 					<input type="radio" name="Political-Party" id="democratic" value="Democratic"> Democratic<br/>
@@ -68,7 +126,7 @@
 
 					If the election was held today, who would you vote for?<br/>
 					<input type="radio" name="Candidate" id="candidate" value="Donald J Trump"> Donald J Trump (Republican Party)<br/>
-					<input type="radio" name="Candidate" id="Candidate" value="Hilary Clinton"> Hillary Clinton (Democratic Party)<br/>
+					<input type="radio" name="Candidate" id="candidate" value="Hilary Clinton"> Hillary Clinton (Democratic Party)<br/>
 					<input type="radio" name="Candidate" id="candidate" value="Evan McMullin"> Evan McMullin (Independent)<br/>
 					<input type="radio" name="Candidate" id="candidate" value="Other"> Other<br/>
 					<input type="radio" name="Candidate" id="candidate" value="Won't Vote"> Won't Vote<br/><br/>
@@ -97,7 +155,7 @@
 					Gender:<br/>
 					<input type="radio" name="Gender" id="gender" value="Male"> Male<br/>
 					<input type="radio" name="Gender" id="gender" value="Female">Female<br/>
-					<input type="submit" name="submit" value="Submit">
+					<input type="submit" name="formSubmit" value="Submit">
 				</form>
 			</div>
 		</div>
