@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	if ($_SERVER['REQUEST_METHOD']== "POST") {
 		$valid = true;
 		$error = "";
@@ -36,25 +35,11 @@
 			$error .= "li>You forgot to pick gender.</li>"
 			$valid = false; // false
 		}
-		if ($error != "") {
-
-		} else {
-
+		if ($valid) {
+			header('Location: https://tranquil-garden-61392.herokuapp.com/surveyResults.php');
+			exit(); // for security use exit function after redirect
 		}
 	}
-	$pol_party = $_POST["Political-Party"];
-	$dir = $_POST["Direction"];
-	$cand = $_POST["Candidate"];
-	$wat_debate = $_POST["Watch-Debate"];
-	$cha_vote = $_POST["Changed-Vote"];
-	$vot_age = $_POST["Age"];
-	$vot_race = $_POST["Race"];
-	$vot_gender = $_POST["Gender"];
-
-	/*if (isset($_SESSION["takenSurvey"])) {
-		header('Location: https://tranquil-garden-61392.herokuapp.com/surveyResults.php');
-		exit(); // for security use exit function after redirect
-	}*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
