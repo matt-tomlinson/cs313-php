@@ -1,16 +1,65 @@
 <?php
 	session_start();
 
+	if ($_POST["formSubmit"] == "Submit") {
+		setcookie("Submit", "yes");
+	}
 	// the file that will store the data
 	$fileName = "data/results.txt";
 
-	//Check to see if we get here from POST
+	$republican = 0;
+	$democratic = 0;
+	$libertarian = 0;
+	$right = 0;
+	$wrong = 0;
+	$undecided = 0;
+	$trump = 0;
+	$hilary = 0;
+	$mucmullin = 0;
+	$otherVote = 0;
+	$wontVote = 0;
+	$debateYes = 0;
+	$debateNo = 0;
+	$changeYes = 0;
+	$changeNo = 0;
+	$age1829 = 0;
+	$age3044 = 0;
+	$age4559 = 0;
+	$age60 = 0;
+	$cauc = 0;
+	$afAm = 0;
+	$his = 0;
+	$natAm = 0;
+	$other = 0;
+	$male = 0;
+	$female = 0;
+
+	//$results = fopen($fileName, "a+") or die("Unable to save results of your survey.");
+
+	//Check to see if we got here from POST
 	if ($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		$formPost = TRUE;
+		//open file
+		//save file content as an int variable, or could save it as an array
+		// close file
 
-		// Set Session Variables
-		$_SESSION["takenSurvey"] = "True";
+		// check all radio buttons and see if the it was selected,
+		// if so then ++ the variable we got from text file.
+
+		// save data to the text file
+
+		//display results
+		$formPost = TRUE;
+	} else {
+		// this should only happen if the user just wants to review the results
+
+		// open file
+
+		// store content as an int variable
+
+		// close file
+
+		// display data
 	}
 
 	/*********************************************
@@ -20,18 +69,18 @@
 	 * the file at all. Once the file is read, it will
 	 * close the file.
 	 *********************************************/
-	$surveyFile = fopen($fileName, "r");
+	/*$surveyFile = fopen($fileName, "r");
 
 	if (isset($surveyFile)){
 		// Read the data from the file
-		$dataBuffer = fread($surveyFile, filesize(filename));
+		//$dataBuffer = fread($surveyFile, filesize($fileName));
 	}else {
 		// File is empty
 		die("Unable to read file.");
 	}
 
 	// I wasn't born in a barn
-	fclose($surveyFile)
+	fclose($surveyFile)*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +133,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 			<?php
-				
+
 			?>
 			</div>
 		</div>
