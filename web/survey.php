@@ -4,35 +4,35 @@
 		$error = "";
 
 		if (empty($_POST["Political-Party"])) {
-			$error .= "<li>You forgot to pick a Political Party</li>"
+			$error .= "<li>You forgot to pick a Political Party</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Direction"])) {
-			$error .= "li>You forgot to pick whether you think this country is going in the right direction</li>";
+			$error .= "<li>You forgot to pick whether you think this country is going in the right direction.</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Candidate"])) {
-			$error .= "li>You forgot to pick a candidate</li>";
+			$error .= "<li>You forgot to pick a candidate</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Watch-Debate"])) {
-			$error .= "li>You forgot to pick whether you watched the debate.</li>";
+			$error .= "<li>You forgot to pick whether you watched the debate.</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Changed-Vote"])) {
-			$error .= "li>You forgot to pick if the debate changed your vote.</li>";
+			$error .= "<li>You forgot to pick if the debate changed your vote.</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Age"])) {
-			$error .= "li>You forgot to pick age group.</li>";
+			$error .= "<li>You forgot to pick age group.</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Race"])) {
-			$error .= "li>You forgot to pick race.</li>";
+			$error .= "<li>You forgot to pick race.</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Gender"])) {
-			$error .= "li>You forgot to pick gender.</li>"
+			$error .= "<li>You forgot to pick gender.</li>";
 			$valid = false; // false
 		}
 		if ($valid) {
@@ -48,7 +48,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="stylesheets/homePage.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/survey.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -90,6 +90,11 @@
 	<!-- First Container -->
 	<div class="container-fluid backgd">
 		<div class="row">
+			<div class="col-sm-12 text-center oldGloryRed">
+				<h1>2016 Political Survey</h1>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-sm-12">
 				<?php
 					if(!empty($error)) {
@@ -97,13 +102,15 @@
 						echo("<ul>" . $error . "</ul>\n");
 					}
 				?>
+			</div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4 survey">
 				<form method="post" id="survey" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 					What Political Party do you associate yourself with?<br/>
 					<input type="radio" name="Political-Party" id="republican" value="Republican"> Republican<br/>
 					<input type="radio" name="Political-Party" id="democratic" value="Democratic"> Democratic<br/>
 					<input type="radio" name="Political-Party" id="libertarian" value="Libertarian"> Libertarian<br/>
 					<input type="radio" name="Political-Party" id="libertarian" value="other"> Other<br/><br/>
-
 					Generally speaking, do you think this country is headed in the right direction or on the wrong track?<br/>
 					<input type="radio" name="Direction" id="direction" value="Right Direction"> Right direction<br/>
 					<input type="radio" name="Direction" id="direction" value="Wrong Direction"> Wrong direction<br/>
@@ -142,6 +149,10 @@
 					<input type="radio" name="Gender" id="gender" value="Female">Female<br/>
 					<input type="submit" name="formSubmit" value="Submit">
 				</form>
+				<br/>
+			</div>
+			<div class="col-sm-12 text-center oldGloryRed">
+				<h7>Thank you for your responses!</h7>
 			</div>
 		</div>
 	</div>
