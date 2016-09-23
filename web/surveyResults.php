@@ -1,5 +1,37 @@
 <?php
 	session_start();
+
+	// the file that will store the data
+	$fileName = "data/results.txt";
+
+	//Check to see if we get here from POST
+	if ($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		$formPost = TRUE;
+
+		// Set Session Variables
+		$_SESSION["takenSurvey"] = "True";
+	}
+
+	/*********************************************
+	 * READ FORM
+	 * This section will get data from from the file.
+	 * It will simply read it, and won't be able to edit
+	 * the file at all. Once the file is read, it will
+	 * close the file.
+	 *********************************************/
+	$surveyFile = fopen($fileName, "r");
+
+	if (isset($surveyFile)){
+		// Read the data from the file
+		$dataBuffer = fread($surveyFile, filesize(filename));
+	}else {
+		// File is empty
+		die("Unable to read file.");
+	}
+
+	// I wasn't born in a barn
+	fclose($surveyFile)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +40,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="stylesheets/homePage.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/survey.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -52,7 +84,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 			<?php
-				require 'results.php';
+				
 			?>
 			</div>
 		</div>
