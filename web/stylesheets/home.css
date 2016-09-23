@@ -1,6 +1,7 @@
-body
+html, body
 {
-    background-color:#E6E6E6;
+    background-color:#1C1C1C;
+    height: 98%;
 }
 .headBox {
     background-color:#4B5765;
@@ -32,6 +33,7 @@ body
     font-size: 25px;
     color:#FAFAFA;
     padding-right: 10px;
+    padding-left: 10px;
 }
 .subHeaderText{
     font-family: Trebuchet;
@@ -53,11 +55,80 @@ body
     font-size: 25px;
     padding-right: 10px;
 }
-a:link,a:visited
-{
+.leftLinkBox {
+    background-color:#4B5765;
+    border: solid black 3px;
+    border-top: none;
+    padding: 3px 8px;
+    display: inline-block;
+    transition: background .25s ease-in-out;
+   -moz-transition: background .25s ease-in-out;
+   -webkit-transition: background .25s ease-in-out;
+    flex-grow: 1;
+}
+.leftLink {
+    text-align: center;
+    font-family: Trebuchet;
+    -o-transition: color .25s linear;
+    -ms-transition: color .25s linear;
+    -moz-transition: color .25s linear;
+    -webkit-transition: color.25s linear;
+    transition:.25s ease-in-out;
+}
+.leftLink:hover{
+    background-color: #5F6E80;
+    color: #F2F2F2;
+}
+.lefty{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Trebuchet;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.iframeMain{
+    height: 100%;
+    width: 100%;
+}
+.iframeDiv{
+    flex-grow: 20;
+}
+.contentBox{
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 85px);
+}
+.content{
+    display:flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.paragraph{
+    font-family: Trebuchet;
+    font-weight: lighter;
+    font-size: 20px;
+    color:#FAFAFA;
+}
+a{
     
 }
-a:hover
-{
-    
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: #F2F2F2;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:active {
+    color: #B4D0F3;
+    background-color: transparent;
+    text-decoration: none;
 }
