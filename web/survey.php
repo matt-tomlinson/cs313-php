@@ -8,31 +8,31 @@
 			$valid = false; // false
 		}
 		if (empty($_POST["Direction"])) {
-			$error .= "li>You forgot to pick whether you think this country is going in the right direction</li>";
+			$error .= "<li>You forgot to pick whether you think this country is going in the right direction</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Candidate"])) {
-			$error .= "li>You forgot to pick a candidate</li>";
+			$error .= "<li>You forgot to pick a candidate</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Watch-Debate"])) {
-			$error .= "li>You forgot to pick whether you watched the debate.</li>";
+			$error .= "<li>You forgot to pick whether you watched the debate.</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Changed-Vote"])) {
-			$error .= "li>You forgot to pick if the debate changed your vote.</li>";
+			$error .= "<li>You forgot to pick if the debate changed your vote.</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Age"])) {
-			$error .= "li>You forgot to pick age group.</li>";
+			$error .= "<li>You forgot to pick age group.</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Race"])) {
-			$error .= "li>You forgot to pick race.</li>";
+			$error .= "<li>You forgot to pick race.</li>";
 			$valid = false; // false
 		}
 		if (empty($_POST["Gender"])) {
-			$error .= "li>You forgot to pick gender.</li>"
+			$error .= "<li>You forgot to pick gender.</li>"
 			$valid = false; // false
 		}
 		if ($valid) {
