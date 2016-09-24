@@ -3,6 +3,12 @@ html, body
     background-color:#1C1C1C;
     height: 98%;
 }
+ul{
+    background-color:#3A434D;
+    list-style-type:none;
+    margin: 1px;
+    padding:5px;
+}
 .headBox {
     background-color:#4B5765;
     border: solid black 2px;
@@ -104,6 +110,22 @@ html, body
     font-family: Arial, Trebuchet;
     font-weight: lighter;
     font-size: 17px;
+    margin: 5px;
+}
+.leftyAssignments{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Arial, Trebuchet;
+    font-weight: lighter;
+    font-size: 17px;
+    margin: 5px;
+}
+.leftyItem{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-family: Arial, Trebuchet;
+    font-weight: lighter;
+    font-size: 13px;
 }
 .iframeMain{
     height: 100%;
@@ -127,6 +149,7 @@ html, body
     font-size:12px;
     color:#FAFAFA;
     align-self: flex-end;
+    margin-top: 20px;
 }
 .paragraph{
     font-family: Arial, Trebuchet;
