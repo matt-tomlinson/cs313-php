@@ -5,7 +5,7 @@ html, body
 }
 .headBox {
     background-color:#4B5765;
-    border: solid black 3px;
+    border: solid black 2px;
     display:flex;
     flex-wrap: wrap;
 }
@@ -13,19 +13,36 @@ html, body
     max-width: 100%;
     height: 80px;
 }
+.profilePic{
+    max-width: 100%;
+    height: 55px;
+    border: solid black 2px;
+    margin: 5px;
+}
 .leftImg{
 }
 .leftHeadBox{
     flex-grow: 1;
+    align-self: center;
 }
 .midHeadBox{
     flex-grow: 20;
     background-color:#424242;
+    align-self: center;
+    padding: 5px;
+    border: solid black 2px;
+}
+.picBox{
+    align-self: center;
 }
 .rightHeadBox{
     flex-grow: 1;
-    text-align: right;
+    text-align: center;
     background-color:#424242;
+    align-self: center;
+    padding: 5px;
+    border: solid black 2px;
+    border-right: none;
 }
 .headerText{
     font-family: Trebuchet;
@@ -42,38 +59,40 @@ html, body
     color:#FAFAFA;
 }
 .titleText{
-    font-family: Trebuchet;
+    font-family: Arial, Trebuchet;
     font-weight: lighter;
     color:#FAFAFA;
-    font-size: 25px;
+    font-size: 20px;
     padding-left: 10px;
 }
 .name{
-    font-family: Trebuchet;
+    font-family: Arial, Trebuchet;
     font-weight: lighter;
     color:#FAFAFA;
-    font-size: 25px;
-    padding-right: 10px;
+    font-size: 20px;
 }
 .leftLinkBox {
     background-color:#4B5765;
-    border: solid black 3px;
+    border: solid black 2px;
     border-top: none;
+    border-right: none;
     padding: 3px 8px;
     display: inline-block;
     transition: background .25s ease-in-out;
    -moz-transition: background .25s ease-in-out;
    -webkit-transition: background .25s ease-in-out;
     flex-grow: 1;
+    align-self: baseline;
+    flex-direction: row;
 }
 .leftLink {
     text-align: center;
-    font-family: Trebuchet;
-    -o-transition: color .25s linear;
-    -ms-transition: color .25s linear;
-    -moz-transition: color .25s linear;
-    -webkit-transition: color.25s linear;
-    transition:.25s ease-in-out;
+    font-family: Arial, Trebuchet;
+    -o-transition: color .15s linear;
+    -ms-transition: color .15s linear;
+    -moz-transition: color .15s linear;
+    -webkit-transition: color.15s linear;
+    transition:.15s ease-in-out;
 }
 .leftLink:hover{
     background-color: #5F6E80;
@@ -82,9 +101,9 @@ html, body
 .lefty{
     padding-top: 10px;
     padding-bottom: 10px;
-    font-family: Trebuchet;
+    font-family: Arial, Trebuchet;
     font-weight: lighter;
-    font-size: 20px;
+    font-size: 17px;
 }
 .iframeMain{
     height: 100%;
@@ -103,7 +122,21 @@ html, body
     flex-wrap: wrap;
     height: 100%;
 }
+.copy{
+    text-align:center;
+    font-size:12px;
+    color:#FAFAFA;
+    align-self: flex-end;
+}
 .paragraph{
+    font-family: Arial, Trebuchet;
+    font-weight: lighter;
+    font-size: 15px;
+    color:#FAFAFA;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.date{
     font-family: Trebuchet;
     font-weight: lighter;
     font-size: 20px;
