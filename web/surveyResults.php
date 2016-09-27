@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	if ($_POST["formSubmit"] == "Submit") {
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		setcookie("Submit", "yes");
 	}
 	// the file that will store the data
@@ -54,6 +54,9 @@
 		// this should only happen if the user just wants to review the results
 
 		// open file
+		$file = fopen($fileName, "r");
+		echo fgets($file);
+		fclose($file);
 
 		// store content as an int variable
 
