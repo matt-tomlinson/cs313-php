@@ -36,7 +36,7 @@
 
 
 	//Check to see if we got here from POST
-	if ($_SERVER["REQUEST_METHOD"] == "POST")
+	if (!empty($_POST))
 	{
 		echo "hello";
 		// Get the content from the text file
