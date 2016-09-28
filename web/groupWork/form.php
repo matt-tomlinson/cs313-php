@@ -23,8 +23,14 @@
 					<img alt="Computer Science" class="img-responsive" src="computer-sci.jpg" height="300px" width="100%" />
 					<p class="open-paragraph">These are the results of the survey, passed using a POST request.</p>
 					
-                    
-                    
+                    Your name: <?php echo $_POST["name"]; ?>
+                    <br/>
+                    Your email: <?php echo $_POST["email"]; ?>
+                    <br/>
+                    Your major: <?php echo $_POST["major"]; ?>
+                    <br/>
+                    Places you have been: <?php echo $_POST["places"]; ?>
+                    <br/>
                     
 					<br/>
 				</div>
