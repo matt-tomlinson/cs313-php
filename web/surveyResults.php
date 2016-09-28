@@ -34,56 +34,70 @@
 	$male = 0;
 	$female = 0;
 
-	//$results = fopen($fileName, "a+") or die("Unable to save results of your survey.");
 
 	//Check to see if we got here from POST
 	if ($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		//open file
-		//save file content as an int variable, or could save it as an array
-		// close file
+		// Get the content from the text file
+		$results = file_get_contents($fileName);
+		// Don't include the | in the text file
+		$results = explode("|", $results);
 
+		$arrlength = count($results);
+		for ($x = 0; $x < $arrlength; $x++) {
+			 echo $results[$x];
+			 echo "<br/>";
+		}
 		// check all radio buttons and see if the it was selected,
 		// if so then ++ the variable we got from text file.
 
 		// save data to the text file
 
 		//display results
-		$formPost = TRUE;
-	} else {
-		// this should only happen if the user just wants to review the results
+		// $formPost = TRUE;
+	} else { /* This will only excute if the user did not submit the form */
 
+		// Get the content from the text file
+		$results = file_get_contents($fileName);
+		// Don't include the | in the text file
+	  $results = explode("|", $results);
+
+		// For testing Purposes to ensure it is displaying correctly
+		/*$arrlength = count($results);
+		for ($x = 0; $x < $arrlength; $x++) {
+			 echo $results[$x];
+			 echo "<br/>";
+		}*/
+
+	}
+
+ /*********************************************
+  * READ TEXT FILE FUNCTION
+  * This section will get data from from the file.
+  * It will simply read it, and won't be able to edit
+  * the file at all. It will store the contents,
+	* of the file into an array, and then close the
+	* file.
+  *********************************************/
+	function readTextFile($fileName) {
+		// declaring local array
+		$str;
 		// open file
-		$file = fopen($fileName, "r");
-		echo fgets($file);
-		fclose($file);
+		//$file = fopen($fileName, "r");
 
-		// store content as an int variable
+		// read the file
 
-		// close file
+			 //$str = file_get_contents($fileName);
+			// $str = explode("|", $str);
 
-		// display data
+
+		// I wasn't born in a barn
+		//fclose($file);
+
+		// make like a leaf
+		return $str;
 	}
 
-	/*********************************************
-	 * READ FORM
-	 * This section will get data from from the file.
-	 * It will simply read it, and won't be able to edit
-	 * the file at all. Once the file is read, it will
-	 * close the file.
-	 *********************************************/
-	/*$surveyFile = fopen($fileName, "r");
-
-	if (isset($surveyFile)){
-		// Read the data from the file
-		//$dataBuffer = fread($surveyFile, filesize($fileName));
-	}else {
-		// File is empty
-		die("Unable to read file.");
-	}
-
-	// I wasn't born in a barn
-	fclose($surveyFile)*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -136,7 +150,72 @@
 		<div class="row">
 			<div class="col-sm-12">
 			<?php
-
+			echo"<label>What Political Party do you associate yourself with?</label><br/>";
+				echo "Republican "; echo $results[0];
+				echo "<br/>";
+				echo "Democratic "; echo $results[1];
+				echo "<br/>";
+				echo "Libertarian "; echo $results[2];
+				echo "<br/>";
+				echo "Other "; echo $results[3];
+				echo "<br/>";
+			echo"<label>Generally speaking, do you think this country is headed in the right direction or on the wrong track?</label><br/>";
+				echo "Right direction "; echo $results[4];
+				echo "<br/>";
+				echo "Wrong direction "; echo $results[5];
+				echo "<br/>";
+				echo "Undecided "; echo $results[6];
+				echo "<br/>";
+			echo"<label>If the election was held today, who would you vote for?</label><br/>";
+				echo "Donald J Trump (Republican Party) "; echo $results[7];
+				echo "<br/>";
+				echo "Hillary Clinton (Democratic Party) "; echo $results[8];
+				echo "<br/>";
+				echo "Gary Johnson (Libertarian) "; echo $results[9];
+				echo "<br/>";
+				echo "Evan McMullin (Independent) "; echo $results[10];
+				echo "<br/>";
+				echo "Other "; echo $results[11];
+				echo "<br/>";
+				echo "Won't Vote "; echo $results[12];
+				echo "<br/>";
+			echo"<label>Did you watch the Presidential debates?</label><br/>";
+				echo "Yes "; echo $results[13];
+				echo "<br/>";
+				echo "No "; echo $results[14];
+				echo "<br/>";
+			echo"<label>If you watched the debate, did the debate change your mind on who you were voting for?</label><br/>";
+				echo "Yes "; echo $results[15];
+				echo "<br/>";
+				echo "No "; echo $results[16];
+				echo "<br/>";
+				echo "Didn't watch debate "; echo $results[17];
+				echo "<br/>";
+			echo"<label>What age group are you in?</label><br/>";
+				echo "18-29 "; echo $results[18];
+				echo "<br/>";
+				echo "30-44 "; echo $results[19];
+				echo "<br/>";
+				echo "45-59 "; echo $results[20];
+				echo "<br/>";
+				echo "60+ "; echo $results[21];
+				echo "<br/>";
+			echo"<label>What racial heritage are you?</label><br/>";
+				echo "Caucasian "; echo $results[22];
+				echo "<br/>";
+				echo "African American "; echo $results[23];
+				echo "<br/>";
+				echo "Hispanic/Latino "; echo $results[24];
+				echo "<br/>";
+				echo "Native American "; echo $results[25];
+				echo "<br/>";
+				echo "Other "; echo $results[26];
+				echo "<br/>";
+			echo"<label>Gender:</label><br/>";
+				echo "Male "; echo $results[27];
+				echo "<br/>";
+				echo "Female "; echo $results[28];
+				echo "<br/>";
 			?>
 			</div>
 		</div>
