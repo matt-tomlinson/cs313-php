@@ -37,6 +37,7 @@
 		if ($valid) {
 			header('Location: https://tranquil-garden-61392.herokuapp.com/surveyResults.php');
 			exit(); // for security use exit function after redirect
+
 		}
 	}
 ?>
@@ -105,48 +106,50 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4 survey">
 				<form method="post" id="survey" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
-					What Political Party do you associate yourself with?<br/>
-					<input type="radio" name="Political-Party" id="republican" value="Republican"> Republican<br/>
-					<input type="radio" name="Political-Party" id="democratic" value="Democratic"> Democratic<br/>
-					<input type="radio" name="Political-Party" id="libertarian" value="Libertarian"> Libertarian<br/>
-					<input type="radio" name="Political-Party" id="libertarian" value="other"> Other<br/><br/>
-					Generally speaking, do you think this country is headed in the right direction or on the wrong track?<br/>
-					<input type="radio" name="Direction" id="direction" value="Right Direction"> Right direction<br/>
-					<input type="radio" name="Direction" id="direction" value="Wrong Direction"> Wrong direction<br/>
-					<input type="radio" name="Direction" id="direction" value="Undecided"> Undecided<br/><br/>
+					<label>What Political Party do you associate yourself with?</label><br/>
+						<input type="radio" name="Political-Party" id="republican" value="Republican"> Republican<br/>
+						<input type="radio" name="Political-Party" id="democratic" value="Democratic"> Democratic<br/>
+						<input type="radio" name="Political-Party" id="libertarian" value="Libertarian"> Libertarian<br/>
+						<input type="radio" name="Political-Party" id="libertarian" value="other"> Other<br/><br/>
 
-					If the election was held today, who would you vote for?<br/>
-					<input type="radio" name="Candidate" id="candidate" value="Donald J Trump"> Donald J Trump (Republican Party)<br/>
-					<input type="radio" name="Candidate" id="candidate" value="Hilary Clinton"> Hillary Clinton (Democratic Party)<br/>
-					<input type="radio" name="Candidate" id="candidate" value="Evan McMullin"> Evan McMullin (Independent)<br/>
-					<input type="radio" name="Candidate" id="candidate" value="Other"> Other<br/>
-					<input type="radio" name="Candidate" id="candidate" value="Won't Vote"> Won't Vote<br/><br/>
+					<label>Generally speaking, do you think this country is headed in the right direction or on the wrong track?</label><br/>
+						<input type="radio" name="Direction" id="direction" value="Right Direction"> Right direction<br/>
+						<input type="radio" name="Direction" id="direction" value="Wrong Direction"> Wrong direction<br/>
+						<input type="radio" name="Direction" id="direction" value="Undecided"> Undecided<br/><br/>
 
-					Have you watched or planning to watch the Presidential debates?<br/>
-					<input type="radio" name="Watch-Debate" id="debate" value="Yes"> Yes<br/>
-					<input type="radio" name="Watch-Debate" id="debate" value="No"> No<br/><br/>
+					<label>If the election was held today, who would you vote for?</label><br/>
+						<input type="radio" name="Candidate" id="candidate" value="Donald J Trump"> Donald J Trump (Republican Party)<br/>
+						<input type="radio" name="Candidate" id="candidate" value="Hilary Clinton"> Hillary Clinton (Democratic Party)<br/>
+						<input type="radio" name="Candidate" id="candidate" value="Evan McMullin"> Evan McMullin (Independent)<br/>
+						<input type="radio" name="Candidate" id="candidate" value="Other"> Other<br/>
+						<input type="radio" name="Candidate" id="candidate" value="Won't Vote"> Won't Vote<br/><br/>
 
-					If you watched the debate, did the debate change your mind on who you were voting for?<br/>
-					<input type="radio" name="Changed-Vote" id="changeVote" value="Yes"> Yes<br/>
-					<input type="radio" name="Changed-Vote" id="changeVote" value="No"> No<br/><br/>
+					<label>Did you watch the Presidential debates?</label><br/>
+						<input type="radio" name="Watch-Debate" id="debate" value="Yes"> Yes<br/>
+						<input type="radio" name="Watch-Debate" id="debate" value="No"> No<br/><br/>
 
-					What age group are you in?<br/>
-					<input type="radio" name="Age" id="age" value="18-29"> 18-29<br/>
-					<input type="radio" name="Age" id="age" value="30-44"> 30-44<br/>
-					<input type="radio" name="Age" id="age" value="45-59"> 45-59<br/>
-					<input type="radio" name="Age" id="age" value="60+"> 60+<br/><br/>
+					<label>If you watched the debate, did the debate change your mind on who you were voting for?</label><br/>
+						<input type="radio" name="Changed-Vote" id="changeVote" value="Yes"> Yes<br/>
+						<input type="radio" name="Changed-Vote" id="changeVote" value="No"> No<br/>
+						<input type="radio" name="Changed-Vote" id="changeVote" value="Didn't Watch Debate"> Didn't watch debate<br/><br/>
 
-					What racial heritage are you?<br/>
-					<input type="radio" name="Race" id="race" value="Caucasian"> Caucasian<br/>
-					<input type="radio" name="Race" id="race" value="African American"> African American<br/>
-					<input type="radio" name="Race" id="race" value="Hispanic/Latino"> Hispanic/Latino<br/>
-					<input type="radio" name="Race" id="race" value="Native American"> Native American<br/>
-					<input type="radio" name="Race" id="race" value="Other"> Other<br/><br/>
+					<label>What age group are you in?</label><br/>
+						<input type="radio" name="Age" id="age" value="18-29"> 18-29<br/>
+						<input type="radio" name="Age" id="age" value="30-44"> 30-44<br/>
+						<input type="radio" name="Age" id="age" value="45-59"> 45-59<br/>
+						<input type="radio" name="Age" id="age" value="60+"> 60+<br/><br/>
 
-					Gender:<br/>
-					<input type="radio" name="Gender" id="gender" value="Male"> Male<br/>
-					<input type="radio" name="Gender" id="gender" value="Female">Female<br/>
-					<input type="submit" name="formSubmit" value="Submit">
+					<label>What racial heritage are you?</label><br/>
+						<input type="radio" name="Race" id="race" value="Caucasian"> Caucasian<br/>
+						<input type="radio" name="Race" id="race" value="African American"> African American<br/>
+						<input type="radio" name="Race" id="race" value="Hispanic/Latino"> Hispanic/Latino<br/>
+						<input type="radio" name="Race" id="race" value="Native American"> Native American<br/>
+						<input type="radio" name="Race" id="race" value="Other"> Other<br/><br/>
+
+					<label>Gender:</label><br/>
+						<input type="radio" name="Gender" id="gender" value="Male"> Male<br/>
+						<input type="radio" name="Gender" id="gender" value="Female"> Female<br/><br/>
+						<input type="submit" name="formSubmit" value="Submit">
 				</form>
 				<br/>
 			</div>
