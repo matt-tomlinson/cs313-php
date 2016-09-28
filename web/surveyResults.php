@@ -57,7 +57,7 @@
 		//display results
 		// $formPost = TRUE;
 	} else { /* This will only excute if the user did not submit the form */
-
+		echo "Not right!";
 		// Get the content from the text file
 		$results = file_get_contents($fileName);
 		// Don't include the | in the text file
