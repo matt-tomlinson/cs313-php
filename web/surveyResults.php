@@ -2,7 +2,8 @@
 	session_start();
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		setcookie("Submit", "yes");
+		//setcookie("Submit", "yes");
+		echo "made it here";
 	}
 	// the file that will store the data
 	$fileName = "data/results.txt";
