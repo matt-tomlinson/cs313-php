@@ -38,6 +38,7 @@
 	//Check to see if we got here from POST
 	if ($_SERVER["REQUEST_METHOD"] == "POST")
 	{
+		echo "hello";
 		// Get the content from the text file
 		$results = file_get_contents($fileName);
 		// Don't include the | in the text file
