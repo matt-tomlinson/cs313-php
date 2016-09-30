@@ -1,0 +1,78 @@
+<style>
+.greybox{
+  background-color:#F1F2F2;
+  padding:1em 1em;
+}
+
+.smallbox{
+  padding:1em;
+  border-left: 1em solid #0668B3;
+  background-color: white;
+  font-size: 15px;
+  text-align: center;
+  height: 90px;
+  color:#0668B3;
+}
+.icon-angle-right{
+  color:#0668B3;
+  float: right;
+  font-size: 30px;
+}
+h4 {
+  color: #0668B3;
+}
+.open-paragraph{
+  font-size: 24px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .smallbox{
+    padding:.2em 1em;
+  }
+
+  .greybox{
+    background-color:#F1F2F2;
+    padding:2em 1em;
+  }
+}
+@media screen and (min-width: 992px) {
+  .smallbox{
+    padding:1em 0em;
+
+  }
+}
+</style>
+<div class="col-xs-12">
+  <img alt="banner" src="#" />
+  <h1>For Students</h1>
+</div>
+<div class="greybox col-xs-12 col-sm-3">
+  <div class="smallbox col-sm-12">
+    <h4>Courses &amp; Requirements <span class="icon-angle-right"></span></h4>
+  </div>
+</div>
+<div class="greybox col-xs-12 col-sm-3">
+  <div class="smallbox col-sm-12">
+    <h4>Foundations<br/>Advising</h4><span class="icon-angle-right"></span>
+  </div>
+</div>
+<div class="greybox col-xs-12 col-sm-3">
+  <div class="smallbox col-sm-12">
+    <h4>Transfer<br/>Students</h4><span class="icon-angle-right"></span>
+  </div>
+</div>
+<div class="greybox col-xs-12 col-sm-3">
+  <div class="smallbox col-sm-12">
+    <h4>Transfer<br/>Credits</h4><span class="icon-angle-right"></span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-8">
+    <h3>What is Foundations?</h3>
+    <p class="open-paragraph">Foundations is BYU-Idaho&rsquo;s version of General Education, and was instituted in 2008 by the faculty of BYU-Idaho under the direction of President Kim B. Clark.</p>
+    <p>A BYU-Idaho education includes both the acquisition of marketable skills and a broad general education. BYU-Idaho graduates should not only be employable, but also literate, well rounded, cultured, and informed. They should be good thinkers and good communicators. They should be good citizens with strong testimonies. And they should graduate with the passion and skills to make them lifelong learners.</p>
+    <p>In BYU-Idaho&rsquo;s Foundations program, students acquire life-changing skills and knowledge. Courses are both broad and deep. Students develop the ability to think critically, to read and write, to reason quantitatively and scientifically, and to collaborate. They also encounter big and meaty questions about today&rsquo;s world, and make connections between the course material and other aspects of their lives.</p>
+    <p>In their Foundations courses, students do not simply prepare for a job, but a vocation&mdash;a purpose and vision of how they can bring about a better world and the skills to help them do it. Foundations is an oasis of learning in a busy and distracted world. We invite students to pause and drink deeply from its waters.</p>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>03.6: PHP Survey</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/home.css">
+</head>
+<body>
+	<main class="" id="Content" role="main">
+		<div class="" id="page-content">
+			<div class="">
+				<h1 class="headerText">Student Survey</h1>
+			</div>
+			<div class="">
+				<div class="answerBox">
+					<form action="form.php" method="POST">
+						<label class="paragraph">Name:</label> <input type="text" maxlength="25" size="20" name="name" required> <br/>
+						<label class="paragraph">Email:</label> <input type="text" maxlength="25" size="20" name="email" required> <br/>
+						<label>Major:</label> <br/>
+						<div class="answerBox">
+								<input type="radio" name="major" value="CS"> Computer Science <br/>
+								<input type="radio" name="major" value="WebD+D"> Web Development and Design <br/>
+								<input type="radio" name="major" value="CIT"> Computer Information Technology <br/>
+								<input type="radio" name="major" value="CE"> Computer Engineering <br/>
+						</div>
+						<label>Places you've Visited</label> <br/>
+						<div class="answerBox">
+								<input type="checkbox" name="places[]" value="NA">North America <br/>
+								<input type="checkbox" name="places[]" value="SA">South America <br/>
+								<input type="checkbox" name="places[]" value="EU">Europe <br/>
+								<input type="checkbox" name="places[]" value="AS">Asia <br/>
+								<input type="checkbox" name="places[]" value="AU">Australia <br/>
+								<input type="checkbox" name="places[]" value="AF">Africa <br/>
+								<input type="checkbox" name="places[]" value="AN">Antartica <br/>
+						</div>
+						<label>Comments</label> <br/>
+							<textarea class="comments" rows="4" cols="50" placeholder="Place Comments Here..." name="comments"></textarea>
+						<br/>
+						<button class="comments" type="submit">Submit</button>
+					</form>
+					<br/>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

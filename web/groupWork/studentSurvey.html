@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Hunter J Marshall</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<header class="head">
+		<h2>CS 313 - Web Engineering II</h2>
+	</header>
+	<main class="sit-content container" id="Content" role="main">
+		<div class="col-lg-12 col-lg-offset-1 col-xl-8 col-xl-8 row" id="page-content">
+			<div class="page-header clearfix">
+				<h1>Student Survey</h1>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<img alt="Computer Science" class="img-responsive" src="computer-sci.jpg" height="300px" width="100%" />
+					<p class="open-paragraph">This is a simple group assignment for CS 313 - Web Engineering II. It was made by group 2 consisting of Hayden Carlson, Weston Clark, Vance Hubbard, Hunter Marshall, Amber Martinez, and Matt Tomlinson. Feel free to input your information to test it out.</p>
+					<form action="form.php" method="POST" class="position">
+						<label>Name:</label> <input type="text" maxlength="25" size="20" name="name" required> <br />
+						<label>Email:</label> <input type="text" maxlength="25" size="20" name="email" required> <br /><br />
+						<label>Major:</label> <br />
+							<input type="radio" name="major" value="CS"> Computer Science <br />
+							<input type="radio" name="major" value="WebD+D"> Web Development and Design <br />
+							<input type="radio" name="major" value="CIT"> Computer Information Technology <br />
+							<input type="radio" name="major" value="CE"> Computer Engineering <br /><br />
+						<label>Places you've Visited</label> <br />
+							<input type="checkbox" name="places[]" value="NA"> North America <br />
+							<input type="checkbox" name="places[]" value="SA"> South America <br />
+							<input type="checkbox" name="places[]" value="EU"> Europe <br />
+							<input type="checkbox" name="places[]" value="AS"> Asia <br />
+							<input type="checkbox" name="places[]" value="AU"> Australia <br />
+							<input type="checkbox" name="places[]" value="AF"> Africa <br />
+							<input type="checkbox" name="places[]" value="AN"> Antartica <br /><br />
+						<label>Comments</label> <br />
+							<textarea rows="4" cols="50" placeholder="Place Comments Here..." name="comments"></textarea>
+						<br />
+						<button type="submit">Submit</button>
+					</form>
+					<br/>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="quote-footer">
+		<h4>"To be a good preofessional engineer, always smart to study late for exams because it teaches you how to manage time and tackle emergencies."" - Bill Gates</h4>
+	</footer>
+</body>
+</html>

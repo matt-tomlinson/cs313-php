@@ -112,13 +112,20 @@ ul{
     font-size: 17px;
     margin: 5px;
 }
-.leftyAssignments{
-    padding-top: 10px;
-    padding-bottom: 10px;
+.leftyButton{
+    padding-top: 5px;
+    padding-bottom: 5px;
     font-family: Arial, Trebuchet;
     font-weight: lighter;
     font-size: 17px;
     margin: 5px;
+    text-align: center;
+}
+.leftyAssignments{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    margin: 3px;
 }
 .leftyItem{
     padding-top: 3px;
@@ -159,11 +166,23 @@ ul{
     padding-left: 10px;
     padding-right: 10px;
 }
-.date{
+.answerBox{
+    font-family: Arial, Trebuchet;
+    font-weight: lighter;
+    font-size: 14px;
+    color:#FAFAFA;
+    padding-left: 20px;
+}
+.comments{
+    font-size: 16px;
+    font-family: Arial, Trebuchet;
+    font-weight: lighter;
+    background: #4B5765;
+}
+label{
     font-family: Trebuchet;
     font-weight: lighter;
-    font-size: 20px;
-    color:#FAFAFA;
+    font-size: 18px;
 }
 a{
     
@@ -183,8 +202,8 @@ a:hover {
     background-color: transparent;
     text-decoration: none;
 }
-a:active {
+input, a:active {
     color: #B4D0F3;
-    background-color: transparent;
+    background-color:#3A434D;
     text-decoration: none;
 }

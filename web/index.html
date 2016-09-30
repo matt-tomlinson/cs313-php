@@ -9,6 +9,10 @@
 			function updateName(name){
 				document.getElementById("pageName").innerHTML = name;
 			}
+			function reload() {
+				var url = document.getElementById('iframeMain').src;
+    			document.getElementById('iframeMain').src = url;
+			} 
 		</script>
 <div id="clockbox"></div>
 
@@ -46,8 +50,18 @@
 					</div>
 					<div>
 						<ul>
-							<a href="home.html" target="targetframe" onclick="updateName('02.6: Homepage')"><li class="leftLink leftyItem">02.6: Homepage</li></a>
-							<a href="https://content.byui.edu/file/537d2fde-9cb7-4e1e-93d7-fb7298b61d2e/1/prove/313-03-prove.html" target="targetframe" onclick="updateName('03.6: PHP Survey')"><li class="leftLink leftyItem">03.6: PHP Survey</li></a>
+							<a href="home.html" target="targetframe" onclick="updateName('02.6 - Homepage')"><li class="leftLink leftyItem">02.6 - Homepage</li></a>
+							<a href="survey.html" target="targetframe" onclick="updateName('03.6 - PHP Survey')"><li class="leftLink leftyItem">03.6 - PHP Survey</li></a>
+						</ul>
+					</div>
+					<div class="leftLink">
+						<a href="assignments.html" target="targetframe" onclick="updateName('Group Work')">
+							<p class="leftyAssignments">Group Work</p>
+						</a>
+					</div>
+					<div>
+						<ul>
+							<a href="cs313/web/groupWork/studentSurvey.html" target="targetframe" onclick="updateName('03.5 - TRA')"><li class="leftLink leftyItem">03.5 - TRA</li></a>
 						</ul>
 					</div>
 					<div class="leftLink">
@@ -65,12 +79,17 @@
 							<p class="lefty">PHP Reference</p>
 						</a>
 					</div>
+					<!--
+					<div class="leftyButton">
+						<input type="button" id="btn" value="Refresh" onclick="reload()">
+					</div>
+					-->
 					<div >
 						<p class="copy"><copyright>&#169; Matt Tomlinson, 2016</copyright></p>
 					</div>
 				</div>
 				<div class="iframeDiv">
-					<iframe class="iframeMain" src="home.html" name="targetframe" allowTransparency="true" scrolling="yees" frameborder="0"></iframe>
+					<iframe class="iframeMain" id="iframeMain" src="home.html" name="targetframe" allowTransparency="true" scrolling="yees" frameborder="0"></iframe>
 				</div>
 			</div>
 		</div>
