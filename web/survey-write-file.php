@@ -1,8 +1,6 @@
 <?php
 date_default_timezone_set('America/Denver');
-/**
- * Writes an array of data to a given point in a file.
- */
+
 function write_request_to_file(&$file_ptr, $request) {
 	foreach ($request as $key => $val) {
 		if (!is_array($val)) {
@@ -14,6 +12,7 @@ function write_request_to_file(&$file_ptr, $request) {
 		}
 	}
 }
+
 $file = 'survey-results.txt';
 $today = date("F j, Y, g:i a");
 $current = file_get_contents($file);

@@ -19,6 +19,7 @@
             <?php echo get_form_request('season') ?>
             <?php echo get_form_request('meal') ?>
             <?php echo get_form_request('pet') ?>
+            <?php echo "<br/>" ?>
         </div>
     </div>
 </body>
