@@ -1,8 +1,5 @@
 <?php 
-
-if (!isset($_SESSION)) {
     $_SESSION["start"] = "true";
-}
 
 ?>
 <!DOCTYPE html>

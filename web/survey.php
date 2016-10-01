@@ -18,7 +18,7 @@
 					<?php
 					session_start();
 					if (!isset($_SESSION['start'])) {
-						$_SESSION["start"] = "true";
+						
 					} else {
 						header("Location: resultsForm.php");
 						exit;
