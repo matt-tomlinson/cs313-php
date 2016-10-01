@@ -1,6 +1,7 @@
 <?php 
+if (!isset($_SESSION['start'])) {
     $_SESSION["start"] = "true";
-
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

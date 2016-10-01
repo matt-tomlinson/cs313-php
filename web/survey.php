@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +17,10 @@
 			<div class="">
 				<div class="answerBox">
 					<?php
-					session_start();
-					if (!isset($_SESSION['start'])) {
-						
-					} else {
+					if (isset($_SESSION['start'])) {
 						header("Location: resultsForm.php");
 						exit;
-					}
+					} 
 					?>
 					<form action="resultsForm.php" target="targetframe" method="POST">
 						<label>Favorite day of the week:</label><br/>
