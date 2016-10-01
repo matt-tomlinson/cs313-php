@@ -1,7 +1,3 @@
-<?php
-// Start the session
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +6,11 @@ session_start();
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/home.css">
+	<script type="text/javascript">
+		function startSession(){
+			<?php session_start(); ?>
+		}
+	</script>
 </head>
 <body>
 	<main class="" id="Content" role="main">
@@ -21,7 +22,7 @@ session_start();
 				<div class="answerBox">
 					<?php
 					if (!isset($_SESSION['start'])) {
-						$_SESSION["start"] = "true";
+						
 					} else {
 						header("Location: resultsForm.php");
 						exit;
@@ -58,8 +59,10 @@ session_start();
 							<input type="radio" name="pet" value="Neither cats or dogs">Neither cats or dogs<br/>
 						</div><br/>
 						<br/>
-						<input class="comments" type="submit" name="submit" value="Submit">
+						<input class="comments" type="submit" name="submit" value="Submit" onclick="startSession()">
 					</form>
+					<input class="comments" type="button" name="clearSession" value="Clear Session">
+					<a href="">Go to results</a>
 				</div>
 			</div>
 		</div>
