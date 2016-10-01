@@ -13,7 +13,6 @@ if (!isset($_SESSION)) {
     <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
 </head>
 <body>
-    <h2 class="headerText">CS 313 - Web Engineering II</h2> 
     <h1 class="headerText">Student Survey Results</h1>        
     <div class="answerBox">
         <div class="answerBox">
