@@ -14,24 +14,38 @@
     <h1 class="headerText">Student Survey</h1>        
     <div class="answerBox">
         <?php
-        if (isset($_POST['submit'])) { /* Do Something Here */ 
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-              $day = test_input($_POST["day"]);
-              $season = test_input($_POST["season"]);
-          }
-      }
-      else { echo "Please submit the form."; }
+        $fileName = "data/results.txt";
 
-      function test_input($data) {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $day = test_input($_POST["day"]);
+            $season = test_input($_POST["season"]);
+
+            $results = file_get_contents($fileName);
+            $results = explode("|", $results);
+
+            $arrlength = count($results);
+            for ($x = 0; $x < $arrlength; $x++) 
+            {
+                echo $results[$x];
+                echo "<br/>";
+            }
+        }  else { 
+            $results = file_get_contents($fileName);
+            $results = explode("|", $results);
+        }
+        
+        else { echo "Please submit the form."; }
+
+        function test_input($data) {
           $data = trim($data);
           $data = stripslashes($data);
           $data = htmlspecialchars($data);
           return $data;
       }
 
-      echo "Day: "; echo $day;
+      echo "Sunday: "; echo $results[0];
       echo "<br/>";
-      echo "Season: "; echo $season;
+      echo "Monday: "; echo $results[1];
       ?>
       <?php echo $_POST["day"]; ?>
   </div>
