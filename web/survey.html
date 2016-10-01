@@ -15,32 +15,27 @@
 			</div>
 			<div class="">
 				<div class="answerBox">
-					<form action="form.php" method="POST">
-						<label class="paragraph">Name:</label> <input type="text" maxlength="25" size="20" name="name" required> <br/>
-						<label class="paragraph">Email:</label> <input type="text" maxlength="25" size="20" name="email" required> <br/>
-						<label>Major:</label> <br/>
+					<form action="resultsForm.php" target="targetframe" method="POST">
+						<label>Favorite day of the week:</label><br/>
 						<div class="answerBox">
-								<input type="radio" name="major" value="CS"> Computer Science <br/>
-								<input type="radio" name="major" value="WebD+D"> Web Development and Design <br/>
-								<input type="radio" name="major" value="CIT"> Computer Information Technology <br/>
-								<input type="radio" name="major" value="CE"> Computer Engineering <br/>
+							<input type="radio" name="day" value="sun">Sunday<br/>
+							<input type="radio" name="day" value="mon">Monday<br/>
+							<input type="radio" name="day" value="tue">Tuesday<br/>
+							<input type="radio" name="day" value="wed">Wednesday<br/>
+							<input type="radio" name="day" value="thu">Thursday<br/>
+							<input type="radio" name="day" value="fri">Friday<br/>
+							<input type="radio" name="day" value="sat">Saturday<br/>
 						</div>
-						<label>Places you've Visited</label> <br/>
+						<label>Favorite Season</label><br/>
 						<div class="answerBox">
-								<input type="checkbox" name="places[]" value="NA">North America <br/>
-								<input type="checkbox" name="places[]" value="SA">South America <br/>
-								<input type="checkbox" name="places[]" value="EU">Europe <br/>
-								<input type="checkbox" name="places[]" value="AS">Asia <br/>
-								<input type="checkbox" name="places[]" value="AU">Australia <br/>
-								<input type="checkbox" name="places[]" value="AF">Africa <br/>
-								<input type="checkbox" name="places[]" value="AN">Antartica <br/>
+							<input type="radio" name="season" value="win">Winter<br/>
+							<input type="radio" name="season" value="spr">Spring<br/>
+							<input type="radio" name="season" value="sum">Summer<br/>
+							<input type="radio" name="season" value="fal">Fall<br/>
 						</div>
-						<label>Comments</label> <br/>
-							<textarea class="comments" rows="4" cols="50" placeholder="Place Comments Here..." name="comments"></textarea>
 						<br/>
-						<button class="comments" type="submit">Submit</button>
+						<input class="comments" type="submit" name="submit" value="Submit">
 					</form>
-					<br/>
 				</div>
 			</div>
 		</div>
