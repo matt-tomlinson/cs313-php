@@ -14,19 +14,11 @@
     <h2 class="headerText">CS 313 - Web Engineering II</h2> 
     <h1 class="headerText">Student Survey</h1>        
     <div class="answerBox">
-        
-        <?php echo $_POST["day"]; ?>
         <div class="answerBox">
-            <?php echo get_form_request('college_choice') ?>
-            <?php
-            echo '<ul>';
-            if (get_form_request('earnings') !== '') {
-                foreach (get_form_request('earnings') as $earning) {
-                    echo "<li>$earning</li>";
-                }
-            }
-            echo '</ul>';
-            ?>
+            <?php echo get_form_request('day') ?>
+            <?php echo get_form_request('season') ?>
+            <?php echo get_form_request('meal') ?>
+            <?php echo get_form_request('pet') ?>
         </div>
     </div>
 </body>
