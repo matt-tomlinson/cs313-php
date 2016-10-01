@@ -1,3 +1,7 @@
+<?php if (!isset($_SESSION)) session_start() ?>
+<?php require_once('process-form.php') ?>
+<?php require_once('survey-write-file.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,40 +14,20 @@
     <h2 class="headerText">CS 313 - Web Engineering II</h2> 
     <h1 class="headerText">Student Survey</h1>        
     <div class="answerBox">
-        <?php
-        $fileName = "results.txt";
-
-        function test_input($data) {
-          $data = trim($data);
-          $data = stripslashes($data);
-          $data = htmlspecialchars($data);
-          return $data;
-        }
-          if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $day = test_input($_POST["day"]);
-            $season = test_input($_POST["season"]);
-
-            $results = file_get_contents($fileName);
-            $results = explode("|", $results);
-
-            $arrlength = count($results);
-            for ($x = 0; $x < $arrlength; $x++) 
-            {
-                echo $results[$x];
-                echo "<br/>";
-            }
-        }  else { 
-            $results = file_get_contents($fileName);
-            $results = explode("|", $results);
-        }
         
-        else { echo "Please submit the form."; }
-
-    echo "Sunday: "; echo $results[0];
-    echo "<br/>";
-    echo "Monday: "; echo $results[1];
-    ?>
-    <?php echo $_POST["day"]; ?>
-</div>
+        <?php echo $_POST["day"]; ?>
+        <div class="answerBox">
+            <?php echo get_form_request('college_choice') ?>
+            <?php
+            echo '<ul>';
+            if (get_form_request('earnings') !== '') {
+                foreach (get_form_request('earnings') as $earning) {
+                    echo "<li>$earning</li>";
+                }
+            }
+            echo '</ul>';
+            ?>
+        </div>
+    </div>
 </body>
 </html>
