@@ -1,46 +1,10 @@
-<?php if (!isset($_SESSION)) session_start() ?>
 <?php 
-function get_form_request($request) {
-    if (isset($_POST[$request])) {
-        if (!isset($_SESSION[$request]) ||
-            $_SESSION[$request] !== $_POST[$request]) {
-            $_SESSION[$request] = $_POST[$request];
-    }
-    return $_POST[$request];
-} else if (isset($_SESSION[$request])) {
-    return $_SESSION[$request];
-}
-return "";
-}
-function fullRequest() {
-    if (isset($_POST) && count($_POST) > 0) {
-        return $_POST;
-    } else if (isset($_SESSION)) {
-        return $_SESSION;
-    }
-    return false;
-}
-?>
-<?php 
-function writeFile(&$file_ptr, $request) {
-    foreach ($request as $key => $val) {
-        if (!is_array($val)) {
-            if (substr($key, 0, 1) !== '_') {
-                $file_ptr .= $key . ': ' . $val . "\n";
-            }
-        } else {
-            writeFile($file_ptr, $val);
-        }
-    }
+
+if (!isset($_SESSION)) {
+    $_SESSION["start"] = "true";
 }
 
-$file = 'results.txt';
-$current = file_get_contents($file);
-writeFile($current, fullRequest());
-$current .= "\n";
-file_put_contents($file, $current);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +14,7 @@ file_put_contents($file, $current);
 </head>
 <body>
     <h2 class="headerText">CS 313 - Web Engineering II</h2> 
-    <h1 class="headerText">Student Survey</h1>        
+    <h1 class="headerText">Student Survey Results</h1>        
     <div class="answerBox">
         <div class="answerBox">
             <?php echo get_form_request('day') ?>

@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="stylesheets/home.css">
 	<script type="text/javascript">
 		function startSession(){
-			<?php session_start(); ?>
+			
 		}
 	</script>
 </head>
@@ -61,8 +61,7 @@
 						<br/>
 						<input class="comments" type="submit" name="submit" value="Submit" onclick="startSession()">
 					</form>
-					<input class="comments" type="button" name="clearSession" value="Clear Session">
-					<a href="">Go to results</a>
+					<br/><a class="comments" href="resultsForm.php" target="targetframe">Go to results</a>
 				</div>
 			</div>
 		</div>
