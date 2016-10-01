@@ -28,8 +28,9 @@
           $data = htmlspecialchars($data);
           return $data;
       }
-      
+
       echo "Day: "; echo $day;
+      echo "<br/>";
       echo "Season: "; echo $season;
       ?>
       <?php echo $_POST["day"]; ?>
