@@ -14,6 +14,8 @@ if (isset($_POST['day'])) {
 
     fwrite($file, $answer);
     fclose($file);
+
+    header("Location: results.php");
 }
 
 ?>
