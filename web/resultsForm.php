@@ -20,7 +20,6 @@ $fileContents = file_get_contents('results.txt');
     <div class="answerBox">
         <div class="answerBox">
             <?php echo $fileContents?>
-            <?php echo "<br/>"?>
         </div>
     </div>
 </body>
