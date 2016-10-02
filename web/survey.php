@@ -4,7 +4,7 @@ session_start();
 
 $_SESSION["submit"] = "false";
 
-if ($_SESSION['submit'] != "true")
+if ($_SESSION['submit'] == "true")
 {
 	header("Location: results.php");
 	exit;
