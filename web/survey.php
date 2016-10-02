@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +16,12 @@
 			<div class="">
 				<div class="answerBox">
 					<?php
-					if (isset($_SESSION['start'])) {
+					if (!isset($_SESSION['start'])) {
+						$_SESSION["start"] = "true";
+					}else {
 						header("Location: resultsForm.php");
 						exit;
-					} 
+					}
 					?>
 					<form action="resultsForm.php" target="targetframe" method="POST">
 						<label>Favorite day of the week:</label><br/>
@@ -53,7 +54,7 @@
 							<input type="radio" name="pet" value="Neither cats or dogs">Neither cats or dogs<br/>
 						</div><br/>
 						<br/>
-						<input class="comments" type="submit" name="submit" value="Submit" onclick="startSession()">
+						<input class="comments" type="submit" name="submit" value="Submit">
 					</form>
 					<br/><a class="comments" href="resultsForm.php" target="targetframe">Go to results</a>
 				</div>
