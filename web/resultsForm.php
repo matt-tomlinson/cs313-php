@@ -1,5 +1,14 @@
 <?php 
 
+session_start();
+
+if (!isset($_SESSION['submit'])) {
+    $_SESSION["submit"] = "true";
+}else {
+    header("Location: resultsForm.php");
+    exit;
+}
+
 $file = fopen("results.txt", "a") or die("Unable to open file!");
 
 $answer  = $_POST['day'] .= "  ";
