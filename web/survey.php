@@ -4,7 +4,7 @@ session_start();
 
 if (!isset($_SESSION['submit']))
 {
-	echo "Welcome!";
+	
 } else {
 	header("Location: results.php");
 	exit;
