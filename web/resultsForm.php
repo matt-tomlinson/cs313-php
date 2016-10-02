@@ -16,6 +16,7 @@ if (isset($_POST['day'])) {
     fclose($file);
 
     header("Location: results.php");
+    exit();
 }
 
 ?>
