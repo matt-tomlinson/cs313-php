@@ -1,7 +1,4 @@
 <?php 
-
-session_start();
-
 if (!isset($_SESSION['submit'])) {
     $_SESSION["submit"] = "true";
 }else {
@@ -32,9 +29,7 @@ $fileContents = file_get_contents('results.txt');
 <body>
     <h1 class="headerText">Student Survey Results</h1>        
     <div class="answerBox">
-        <div class="answerBox">
-            <?php echo $fileContents?>
-        </div>
+        <?php echo $fileContents?>
     </div>
 </body>
 </html>
