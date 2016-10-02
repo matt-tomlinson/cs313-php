@@ -1,7 +1,13 @@
 <?php 
 
 $file = fopen("results.txt", "a") or die("Unable to open file!");
-$answer = $_POST['day'] .= $_POST['season'] .= $_POST['meal'] .= $_POST['pet'] .= "<br/>";
+
+$answer = $_POST['day'] .= "  "
+.= $_POST['season'] .= "  "
+.= $_POST['meal'] .= "  "
+.= $_POST['pet'] .= "  "
+.= "<br/>";
+
 fwrite($file, $answer);
 fclose($file);
 
