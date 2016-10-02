@@ -2,13 +2,13 @@
 
 session_start();
 
-if (!isset($_SESSION['submit']))
+$_SESSION["submit"] = "false";
+
+if ($_SESSION['submit'] != "true")
 {
-	
-} else {
 	header("Location: results.php");
 	exit;
-}
+} 
 
 ?>
 <!DOCTYPE html>
