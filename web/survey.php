@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['submit'])) {
-	$_SESSION["submit"] = "true";
+	//$_SESSION["submit"] = "true";
 } else {
 	header("Location: results.php");
 	exit;
