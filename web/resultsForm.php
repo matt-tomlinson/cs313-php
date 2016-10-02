@@ -1,5 +1,4 @@
 <?php 
-if (!isset($_SESSION)) session_start() 
 
 $file = fopen("results.txt", "a") or die("Unable to open file!");
 $answer = $_POST['day'] .= $_POST['season']  .= $_POST['meal'] .= $_POST['pet'] .= "\n";
