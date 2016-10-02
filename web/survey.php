@@ -1,10 +1,15 @@
 <?php 
+
 session_start();
 
-if (isset($_SESSION['submit'])) {
+if (!isset($_SESSION['submit']))
+{
+	echo "Welcome!";
+} else {
 	header("Location: results.php");
-	exit();
+	exit;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
