@@ -1,5 +1,10 @@
 <?php 
 session_start();
+
+if (isset($_SESSION['submit'])) {
+	header("Location: resultsForm.php");
+	exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,12 +51,12 @@ session_start();
 						<div class="answerBox">
 							<input type="radio" name="pet" value="Cats">Cats<br/>
 							<input type="radio" name="pet" value="Dogs">Dogs<br/>
-							<input type="radio" name="pet" value="Neither cats or dogs">Neither cats or dogs<br/>
+							<input type="radio" name="pet" value="Neither cats or dogs">Neither Cats Nor Dogs<br/>
 						</div><br/>
 						<br/>
 						<input class="comments" type="submit" name="submit" value="Submit">
 					</form>
-					<br/><a class="comments" href="resultsForm.php" target="targetframe">Go to results</a>
+					<br/><a class="comments" href="results.php" target="targetframe">Go to results</a>
 				</div>
 			</div>
 		</div>
