@@ -16,7 +16,7 @@
 			<div class="">
 				<div class="answerBox">
 					<?php
-					session_start() 
+					session_start();
 					if (!isset($_SESSION['start'])) {
 						$_SESSION["start"] = "true";
 					}else {
