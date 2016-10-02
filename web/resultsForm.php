@@ -1,7 +1,7 @@
 <?php 
 
 $file = fopen("results.txt", "a") or die("Unable to open file!");
-$answer = $_POST['day'] .= $_POST['season']  .= $_POST['meal'] .= $_POST['pet'] .= "\n";
+$answer = $_POST['day'] .= $_POST['season'] .= $_POST['meal'] .= $_POST['pet'] .= "<br/>";
 fwrite($file, $answer);
 fclose($file);
 
@@ -15,7 +15,7 @@ $fileContents = file_get_contents('results.txt');
     <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
 </head>
 <body>
-    <h1 class="headerText">Student Survey</h1>        
+    <h1 class="headerText">Student Survey Results</h1>        
     <div class="answerBox">
         <div class="answerBox">
             <?php echo $fileContents?>
