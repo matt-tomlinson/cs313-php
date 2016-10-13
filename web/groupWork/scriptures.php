@@ -1,5 +1,5 @@
 <html>
-<body class="answerBox">
+<body>
 
 	<h1>Scriptures</h1>
 
@@ -21,10 +21,10 @@ try {
 $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 foreach ($db->query('SELECT book, chapter, verse, content FROM scripture') as $row)
 {
-	echo '<p>';
+echo '<div style="font-color:white;">';
 	echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
 	echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
-	echo '</p>';
+	echo '</div>';
 }
 }
 catch (PDOException $ex) {
