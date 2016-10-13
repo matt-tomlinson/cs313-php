@@ -1,6 +1,6 @@
 <html>
 <body>
-	<div class="answerBox">
+<div class="paragraph">
 		<h1>Scriptures</h1>
 
 		<?php
