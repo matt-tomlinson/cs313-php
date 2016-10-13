@@ -38,26 +38,23 @@ foreach ($db->query('SELECT now()') as $row)
 
 ?>
 
-<?php
-$title = 'Week 5 Prep';
-$description = "Week 5 Prep for CS 313.";
-include $_SERVER['DOCUMENT_ROOT'] . '/cs313/views/addins/header.php'; 
-?>
 <h1 class="answerBox">Week 5: Team Readiness - Scriptures</h1>
 <main class="answerBox">
     <br>
     <hr>
     <h2 class="answerBox">SCRIPTURE RESOURCES</h2>
     <?php 
-    foreach($stmt->fetchAll() as $row){
+    foreach($db->query('SELECT book, chapter, verse, content FROM scripture') as $row)
+    {
+    	echo '<p class="answerBox">';
         echo '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b>';
         echo ' - "' . $row['content'] . '"';
+        echo '</p>';
         echo '<br/><br/>';
     }
     ?>
     <hr>
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/cs313/views/addins/footer.php'; ?>
 
 </body>
 </html>
