@@ -1,7 +1,7 @@
 <html>
-<body>
+<body class="answerBox">
 
-<h1 class="answerBox">Scriptures</h1>
+	<h1>Scriptures</h1>
 
 	<?php
 	// default Heroku Postgres configuration URL
@@ -11,7 +11,7 @@
 	$dbUrl = "postgres://postgres:password@localhost:5432/cs313db";
 }
 $dbopts = parse_url($dbUrl);
-print "<p class="answerBox">$dbUrl</p>\n\n";
+print "<p>$dbUrl</p>\n\n";
 $dbHost = $dbopts["host"]; 
 $dbPort = $dbopts["port"]; 
 $dbUser = $dbopts["user"]; 
@@ -21,14 +21,14 @@ try {
 $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 foreach ($db->query('SELECT book, chapter, verse, content FROM scripture') as $row)
 {
-	echo '<p class="answerBox">';
+	echo '<p>';
 	echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
 	echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
 	echo '</p>';
 }
 }
 catch (PDOException $ex) {
-print "<p class="answerBox">error: $ex->getMessage() </p>\n\n";
+print "<p>error: $ex->getMessage() </p>\n\n";
 die();
 }
 ?>
