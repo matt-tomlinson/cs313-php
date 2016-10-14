@@ -4,10 +4,10 @@
 	<link rel="stylesheet" type="text/css" href="stylesheets/home.css"></link>
 	<link rel='icon' type='image/x-icon' href='favicon.ico'/>
 </head>
-<body class="answerBox">
-	<h1>Scriptures</h1>
+<body>
+	<h1 class="headerText">Scriptures</h1>
 
-	<div>
+	<div class="answerBox">
 		<?php
 		// default Heroku Postgres configuration URL
 		$dbUrl = getenv('DATABASE_URL');
