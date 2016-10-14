@@ -1,8 +1,8 @@
 <html>
 <body>
-<div class="paragraph">
-		<h1>Scriptures</h1>
+	<h1 class="headerText">Scriptures</h1>
 
+	<div class="answerBox">
 		<?php
 		// default Heroku Postgres configuration URL
 		$dbUrl = getenv('DATABASE_URL');
@@ -16,6 +16,7 @@
 		$dbUser = $dbopts["user"]; 
 		$dbPassword = $dbopts["pass"];
 		$dbName = ltrim($dbopts["path"],'/');
+		<br>
 		try {
 		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 		foreach ($db->query('SELECT book, chapter, verse, content FROM scripture') as $row)
@@ -28,6 +29,7 @@
 		print "<p>error: $ex->getMessage() </p>\n\n";
 		die();}
 		?>
+		<br>
 	</div>
 </body>
 </html>
