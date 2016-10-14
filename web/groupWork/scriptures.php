@@ -1,8 +1,8 @@
 <html>
-<body>
-	<h1 class="headerText">Scriptures</h1>
+<body class="white">
+	<h1>Scriptures</h1>
 
-	<div class="answerBox">
+	<div>
 		<?php
 		// default Heroku Postgres configuration URL
 		$dbUrl = getenv('DATABASE_URL');

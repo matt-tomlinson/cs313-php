@@ -185,6 +185,9 @@ ul{
     font-family: Arial, Trebuchet;
     font-weight: lighter;
 }
+.white{
+    background-color: #FAFAFA;
+}
 label{
     font-family: Trebuchet;
     font-weight: lighter;
