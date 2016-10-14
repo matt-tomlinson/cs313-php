@@ -16,7 +16,7 @@
 		$dbUser = $dbopts["user"]; 
 		$dbPassword = $dbopts["pass"];
 		$dbName = ltrim($dbopts["path"],'/');
-		<br>
+		print <br>
 		try {
 		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 		foreach ($db->query('SELECT book, chapter, verse, content FROM scripture') as $row)
