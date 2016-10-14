@@ -16,7 +16,6 @@
 		$dbUser = $dbopts["user"]; 
 		$dbPassword = $dbopts["pass"];
 		$dbName = ltrim($dbopts["path"],'/');
-		print <br>
 		try {
 		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 		foreach ($db->query('SELECT book, chapter, verse, content FROM scripture') as $row)
@@ -29,7 +28,6 @@
 		print "<p>error: $ex->getMessage() </p>\n\n";
 		die();}
 		?>
-		<br>
 	</div>
 </body>
 </html>
