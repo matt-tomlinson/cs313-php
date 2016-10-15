@@ -266,10 +266,10 @@ a.tableLink:visited{
     color: #19263A;
 }
 a.tableLink:hover{
-    color: #293C5B;
+    color: #3E5B89;
 }
 a.tableLink:active{
-    color: #3E5B89;
+    color: #6D9EED;
 }
 a:link {
     color: white;
