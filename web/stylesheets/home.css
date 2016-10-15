@@ -262,8 +262,14 @@ a{
 a.tableLink:link{
     color: #19263A;
 }
+a.tableLink:visited{
+    color: #19263A;
+}
 a.tableLink:hover{
     color: #293C5B;
+}
+a.tableLink:active{
+    color: #3E5B89;
 }
 a:link {
     color: white;
