@@ -270,6 +270,7 @@ a.tableLink:hover{
 }
 a.tableLink:active{
     color: #6D9EED;
+    background-color: transparent;
 }
 a:link {
     color: white;
