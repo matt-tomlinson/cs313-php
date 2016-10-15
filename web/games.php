@@ -15,6 +15,7 @@
 				<th class="tg-yw4l">Price</th>
 				<th class="tg-yw4l">Release Date</th>
 				<th class="tg-yw4l">Rating</th>
+				<th class="tg-yw4l">Publisher</th>
 			</tr>
 			
 		<?php
@@ -35,7 +36,7 @@
 
 		try {
 			$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-			foreach ($db->query('SELECT priority, title, price, releasedate, dateadded, rating FROM games') as $row)
+			foreach ($db->query('SELECT priority, title, price, releasedate, dateadded, rating, p.name, p.url FROM games g INNER JOIN publishers p on p.publisherid = g.publisherid') as $row)
 			{
 				echo '<tr>';
 				echo '<td class="tg-yw4l">'.$row['priority'].'</td>';
@@ -43,6 +44,7 @@
 				echo '<td class="tg-yw4l">'.'$'.$row['price'].'</td>';
 				echo '<td class="tg-yw4l">'.$row['releasedate'].'</td>';
 				echo '<td class="tg-yw4l">'.$row['rating'].'</td>';
+				echo '<td class="tg-yw4l"><a href="'.$row['p.url'].'">'.$row['p.name'].'</a></td>';
 				echo '</tr>';
 				//echo '<p>';
 				//echo '<strong>' . $row['priority'] . '. ' . $row['title'] . ' : ' . '</strong>';
