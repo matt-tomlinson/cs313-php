@@ -39,7 +39,7 @@
 			{
 				echo '<tr>';
 				echo '<td class="tg-yw4l">'.$row['priority'].'</td>';
-				echo '<td class="tg-yw4l">'.$row['title'].'</td>';
+				echo '<td class="tg-yw4l">'.'$'.$row['title'].'</td>';
 				echo '<td class="tg-yw4l">'.$row['price'].'</td>';
 				echo '<td class="tg-yw4l">'.$row['releasedate'].'</td>';
 				echo '<td class="tg-yw4l">'.$row['rating'].'</td>';
