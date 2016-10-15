@@ -43,7 +43,7 @@
 				echo '<td class="tg-yw4l">'.'$' .$row['price']'.00'.'</td>';
 				echo '<td class="tg-yw4l">'.$row['releasedate'].'</td>';
 				echo '<td class="tg-yw4l">'.$row['rating'].'</td>';
-				echo '<tr>';
+				echo '</tr>';
 				//echo '<p>';
 				//echo '<strong>' . $row['priority'] . '. ' . $row['title'] . ' : ' . '</strong>';
 				//echo ' $' . $row['price']  . '.00  ' . $row['releasedate'];
