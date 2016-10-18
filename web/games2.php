@@ -81,10 +81,16 @@
 		<div id="inputLine">
 		<div id="popupContact">
 			<form action="#" id="form" method="post" name="form">
-				<img id="close" src="x.png" onclick ="div_hide()">
-				<input id="name" name="name" placeholder="Name" type="text">
-				<input id="email" name="email" placeholder="Email" type="text">
 				<a href="javascript:%20check_empty()" id="submit">Send</a>
+				<tr>
+					<td class="tg-yw4l"><input id="priority" name="priority" placeholder="priority" type="text"></td>
+					<td class="tg-yw4l"><input id="title" name="title" placeholder="title" type="text"></td>
+					<td class="tg-yw4l"><input id="price" name="price" placeholder="price" type="text"></td>
+					<td class="tg-yw4l"><input id="releasedate" name="releasedate" placeholder="releasedate" type="text"></td>
+					<td class="tg-yw4l"><input id="rating" name="rating" placeholder="rating" type="text"></td>
+					<td class="tg-yw4l"><input id="name" name="name" placeholder="Name" type="text"></td>
+					<td class=""><img class="x" id="close" src="x.png" onclick ="div_hide()"></td>
+				</tr>
 			</form>
 		</div>
 	</div>

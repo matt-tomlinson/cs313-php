@@ -230,6 +230,10 @@ ul{
     background-color: transparent;
     height: 15px;
 }
+.x{
+    background-color: transparent;
+    height: 15px;
+}
 th.tg-sort-header::-moz-selection{ 
     background:transparent; 
 }
