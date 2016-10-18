@@ -44,7 +44,7 @@
 				echo '<td class="tg-yw4l">'.'$'.$row['price'].'</td>';
 				echo '<td class="tg-yw4l">'.$row['releasedate'].'</td>';
 				echo '<td class="tg-yw4l">'.$row['rating'].'</td>';
-				echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="targetframe">'.$row['name'].'</a></td>';
+				echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="_top">'.$row['name'].'</a></td>';
 				echo '</tr>';
 				//echo '<p>';
 				//echo '<strong>' . $row['priority'] . '. ' . $row['title'] . ' : ' . '</strong>';
