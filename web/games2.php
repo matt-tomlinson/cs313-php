@@ -1,10 +1,24 @@
 <html>
 <head>
-	<title>Matt Tomlinson's Home Page</title>
+<title>Matt Tomlinson's Home Page</title>
 	<link rel="stylesheet" type="text/css" href="stylesheets/home.css"></link>
 	<link rel='icon' type='image/x-icon' href='favicon.ico'/>
+	<script src="my_js.js"></script>
 </head>
 <body>
+	<div id="abc">
+		<div id="popupContact">
+			<form action="#" id="form" method="post" name="form">
+				<img id="close" src="images/3.png" onclick ="div_hide()">
+				<h2>Contact Us</h2>
+				<hr>
+				<input id="name" name="name" placeholder="Name" type="text">
+				<input id="email" name="email" placeholder="Email" type="text">
+				<textarea id="msg" name="message" placeholder="Message"></textarea>
+				<a href="javascript:%20check_empty()" id="submit">Send</a>
+			</form>
+		</div>
+	</div>
 	<h1 class="headerText">Games Wish List</h1>
 
 	<div class="answerBox">
@@ -16,7 +30,7 @@
 				<th class="tg-yw4l">Release Date</th>
 				<th class="tg-yw4l">Rating</th>
 				<th class="tg-yw4l">Publisher</th>
-				<th class=""><input type="image" src="add.png" class="add"/></th>
+				<th class=""><input type="image" src="add.png" class="add" onclick="div_show()"/></th>
 			</tr>
 			
 		<?php
