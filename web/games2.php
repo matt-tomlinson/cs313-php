@@ -46,7 +46,6 @@
 				echo '<td class="tg-yw4l">'.$row['releasedate'].'</td>';
 				echo '<td class="tg-yw4l">'.$row['rating'].'</td>';
 				echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="_top">'.$row['name'].'</a></td>';
-				echo '<td class="tg-yw4l">'.'</td>';
 				echo '<th class="tg-yw4l"><input type="image" class="add" src="delete.png"/>';
 				echo '</tr>';
 				//echo '<p>';
