@@ -3,11 +3,31 @@
 <title>Matt Tomlinson's Home Page</title>
 	<link rel="stylesheet" type="text/css" href="stylesheets/home.css"></link>
 	<link rel='icon' type='image/x-icon' href='favicon.ico'/>
-	<script src="my_js.js"></script>
+	<script>
+		function check_empty() {
+			if (document.getElementById('name').value == "" || document.getElementById('email').value == "" || document.getElementById('msg').value == "") {
+				alert("Fill All Fields !");
+			} else {
+				document.getElementById('form').submit();
+				alert("Form Submitted Successfully...");
+			}
+		}
+		//Function To Display Popup
+		function div_show() {
+			document.getElementById('abc').style.display = "block";
+		}
+		//Function to Hide Popup
+		function div_hide(){
+			document.getElementById('abc').style.display = "none";
+		}
+	</script>
 </head>
 <body>
+	<h1 class="headerText">Games Wish List</h1>
 	<div id="abc">
+		<!-- Popup Div Starts Here -->
 		<div id="popupContact">
+			<!-- Contact Us Form -->
 			<form action="#" id="form" method="post" name="form">
 				<img id="close" src="images/3.png" onclick ="div_hide()">
 				<h2>Contact Us</h2>
@@ -18,9 +38,8 @@
 				<a href="javascript:%20check_empty()" id="submit">Send</a>
 			</form>
 		</div>
+		<!-- Popup Div Ends Here -->
 	</div>
-	<h1 class="headerText">Games Wish List</h1>
-
 	<div class="answerBox">
 		<table id="tg-7jIQ2" class="tg">
 			<tr>
@@ -60,7 +79,7 @@
 				echo '<td class="tg-yw4l">'.$row['releasedate'].'</td>';
 				echo '<td class="tg-yw4l">'.$row['rating'].'</td>';
 				echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="_top">'.$row['name'].'</a></td>';
-				echo '<td class=""><input type="image" src="delete.png" class="add"/></td>';
+				echo '<td class=""><input type="image" src="delete.png" class="add"  onclick="div_hide()"/></td>';
 				echo '</tr>';
 				//echo '<p>';
 				//echo '<strong>' . $row['priority'] . '. ' . $row['title'] . ' : ' . '</strong>';
