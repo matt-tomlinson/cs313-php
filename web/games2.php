@@ -16,7 +16,7 @@
 				<th class="tg-yw4l">Release Date</th>
 				<th class="tg-yw4l">Rating</th>
 				<th class="tg-yw4l">Publisher</th>
-				<th class="tg-yw4l"><input type="image" class="add" src="add.png"/>
+				<th class=""><input type="image" class="add" src="add.png"/>
 			</tr>
 			
 		<?php
@@ -46,7 +46,7 @@
 				echo '<td class="tg-yw4l">'.$row['releasedate'].'</td>';
 				echo '<td class="tg-yw4l">'.$row['rating'].'</td>';
 				echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="_top">'.$row['name'].'</a></td>';
-				echo '<th class="tg-yw4l"><input type="image" class="add" src="delete.png"/>';
+				//echo '<th><input type="image" class="add" src="delete.png"/>';
 				echo '</tr>';
 				//echo '<p>';
 				//echo '<strong>' . $row['priority'] . '. ' . $row['title'] . ' : ' . '</strong>';
