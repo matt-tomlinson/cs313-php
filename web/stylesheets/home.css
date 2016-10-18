@@ -222,6 +222,18 @@ ul{
     text-align:center;
     vertical-align:top
 }
+.add{
+    background-color: transparent;
+    height: 15px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.delete{
+    background-color: transparent;
+    height: 15px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
 th.tg-sort-header::-moz-selection{ 
     background:transparent; 
 }

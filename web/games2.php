@@ -16,7 +16,7 @@
 				<th class="tg-yw4l">Release Date</th>
 				<th class="tg-yw4l">Rating</th>
 				<th class="tg-yw4l">Publisher</th>
-				<th class="tg-yw4l"></th>
+				<th class="tg-yw4l"><input type="image" class="add" src="add.png"/>
 			</tr>
 			
 		<?php
@@ -37,7 +37,7 @@
 
 		try {
 			$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-			foreach ($db->query('SELECT priority, title, price, releasedate, dateadded, rating, p.name, p.url FROM games g INNER JOIN publishers p on p.publisherid = g.publisherid') as $row)
+			foreach ($db->query('SELECT priority, title, price, releasedate, dateadded, rating, p.name, p.url FROM games g INNER JOIN publishers p on p.publisherid = g.publisherid ORDER BY priority') as $row)
 			{
 				echo '<tr>';
 				echo '<td class="tg-yw4l">'.$row['priority'].'</td>';
@@ -47,6 +47,7 @@
 				echo '<td class="tg-yw4l">'.$row['rating'].'</td>';
 				echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="_top">'.$row['name'].'</a></td>';
 				echo '<td class="tg-yw4l">'.'</td>';
+				echo '<th class="tg-yw4l"><input type="image" class="add" src="delete.png"/>';
 				echo '</tr>';
 				//echo '<p>';
 				//echo '<strong>' . $row['priority'] . '. ' . $row['title'] . ' : ' . '</strong>';
