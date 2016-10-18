@@ -223,16 +223,18 @@ ul{
     vertical-align:center;
 }
 .add{
+	margin-left:5px;
+	margin-right:5px;
     background-color: transparent;
-    height: 15px;
+    height: 18px;
 }
-.delete{
-    background-color: transparent;
-    height: 15px;
-}
-.x{
-    background-color: transparent;
-    height: 15px;
+.addField{
+	color:#04003a;
+	background-color:#ededed;
+	width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 th.tg-sort-header::-moz-selection{ 
     background:transparent; 
