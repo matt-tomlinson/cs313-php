@@ -14,7 +14,7 @@
 		}
 		function dropRow(title) {
 			var txt;
-			var r = confirm("Press a button!");
+			var r = confirm("Are you sure that you want to delete this ");
 			if (r == true) {
 				<?php 
 					// default Heroku Postgres configuration URL
@@ -32,9 +32,9 @@
 						
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						
-						$query = "DELETE FROM games WHERE title='${title}'";
+						$query = "DELETE FROM games WHERE title='" . title . "'";
 						echo $query . "<br>";
-						//$result = pg_query($query);
+						
 						$conn->exec($query);
 					}
 					catch(PDOException $e){
