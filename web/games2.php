@@ -45,15 +45,29 @@
 			$dbPassword = $dbopts["pass"];
 			$dbName = ltrim($dbopts["path"],'/');
 
+			$dbconn = pg_connect('host=$dbHost dbname=$dbName user=$dbUser password=$dbPassword');
+
+			$priority = pg_escape_string($_POST['priority']);
+			$title = pg_escape_string($_POST['title']);
+			$price = pg_escape_string($_POST['price']);
+			$releasedate = pg_escape_string($_POST['releasedate']);
+			$rating = pg_escape_string($_POST['rating']);
+
+			if (isset($_POST['priority'])) {
+				alert("inside isset statement");
+				
+				$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '1', '1', '" . $releasedate . "', 'now()', '" . $rating . "')";
+				$result = pg_query($query);
+
+				if (!$result) { 
+					$errormessage = pg_last_error(); 
+					echo "Error with query: " . $errormessage; 
+					exit(); 
+				} 
+			}
+
 			try {
 				$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-				if (isset($_POST['priority'])) {
-					alert("inside isset statement");
-
-					$result = pg_query($db, "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) 
-						VALUES('$_POST[priority]', '$_POST[title]', '$_POST[price]', '1', '1', $_POST[releasedate]', 'now()', $_POST[rating]');");
-				}
 
 				foreach ($db->query('SELECT priority, title, price, releasedate, dateadded, rating, p.name, p.url FROM games g INNER JOIN publishers p on p.publisherid = g.publisherid ORDER BY priority') as $row)
 				{
