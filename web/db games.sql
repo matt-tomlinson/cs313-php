@@ -24,7 +24,14 @@ insert into games (priority,title,price,publisherid,platformid,releasedate,datea
 	values (1,'Overwatch',40.00,1,1,'2016-5-24',now(),'T');
 
 insert into games (priority,title,price,publisherid,platformid,releasedate,dateadded,rating)
-	values (2,'Diablo III',40,1,1,'2012-5-15',now(),'M');
+	values (2,'Diablo III',20,1,1,'2012-5-15',now(),'M');
 
 insert into games (priority,title,price,publisherid,platformid,releasedate,dateadded,rating)
 	values (3,'Hearthstone',0,1,1,'2014-3-11',now(),'T');
+
+insert into games (priority,title,price,publisherid,platformid,releasedate,dateadded,rating)
+	values (4,'World of Warcraft',15,1,1,'2004-11-23',now(),'T');
+
+SELECT priority, title, price, releasedate, dateadded, rating, p.name, p.url 
+FROM games g
+INNER JOIN publishers p on p.publisherid = g.publisherid
