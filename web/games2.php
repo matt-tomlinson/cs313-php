@@ -45,29 +45,26 @@
 			$dbPassword = $dbopts["pass"];
 			$dbName = ltrim($dbopts["path"],'/');
 
-			
-
-			if (isset($_POST['priority'])) {
-
-				$priority = $_POST['priority'];
-				$title = $_POST['title'];
-				$price = $_POST['price'];
-				$releasedate = $_POST['releasedate'];
-				$rating = $_POST['rating'];
-				
-				$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '1', '1', '" . $releasedate . "', 'now()', '" . $rating . "')";
-				$result = pg_query($query);
-
-				if (!$result) { 
-					$errormessage = pg_last_error(); 
-					echo "Error with query: " . $errormessage; 
-					exit(); 
-				} 
-			}
-
 			try {
 				$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
+				if (isset($_POST['priority'])) {
+
+					$priority = $_POST['priority'];
+					$title = $_POST['title'];
+					$price = $_POST['price'];
+					$releasedate = $_POST['releasedate'];
+					$rating = $_POST['rating'];
+					
+					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					
+					$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '1', '1', '" . $releasedate . "', 'now()', '" . $rating . "')";
+					
+					//$result = pg_query($query);
+					$conn->exec($query);
+
+					$conn = null;
+				}
 				foreach ($db->query('SELECT priority, title, price, releasedate, dateadded, rating, p.name, p.url FROM games g INNER JOIN publishers p on p.publisherid = g.publisherid ORDER BY priority') as $row)
 				{
 					echo '<tr>';
@@ -94,7 +91,7 @@
 
 			<div id="inputLine">
 				<div id="popupContact">
-					<form action="games2Form.php" id="form" method="post" name="form" target="targetframe">
+					<form action="games2.php" id="form" method="post" name="form" target="targetframe">
 						<tr>
 							<td class="tg-yw4l"><input class="addField" id="priority" name="priority" placeholder=" Priority" type="text"></td>
 							<td class="tg-yw4l"><input class="addField" id="title" name="title" placeholder=" Title" type="text"></td>
