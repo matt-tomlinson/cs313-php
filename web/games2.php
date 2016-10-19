@@ -12,14 +12,6 @@
 				alert("Form Submitted Successfully.");
 			}
 		}
-		//Function To Display Popup
-		function div_show() {
-			document.getElementById('inputLine').style.display = "block";
-		}
-		//Function to Hide Popup
-		function div_hide(){
-			document.getElementById('inputLine').style.display = "none";
-		}
 	</script>
 </head>
 <body>
@@ -58,7 +50,7 @@
 
 				if (isset($_POST['priority'])) {
 					alert("inside isset statement");
-					$priority  = $_POST['priority'];
+
 					$result = pg_query($db, "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) 
 						VALUES('$_POST[priority]', '$_POST[title]', '$_POST[price]', '1', '1', $_POST[releasedate]', 'now()', $_POST[rating]');");
 				}
@@ -74,6 +66,7 @@
 					echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="_top">'.$row['name'].'</a></td>';
 					echo '<td class=""><input type="image" src="delete.png" class="add"/></td>';
 					echo '</tr>';
+					echo '$_POST['title']';
 				//echo '<p>';
 				//echo '<strong>' . $row['priority'] . '. ' . $row['title'] . ' : ' . '</strong>';
 				//echo ' $' . $row['price']  . '.00  ' . $row['releasedate'];
