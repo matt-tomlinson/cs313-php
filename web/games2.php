@@ -6,7 +6,7 @@
 	<script>
 		function check_empty() {
 			if (document.getElementById('priority').value == "" || document.getElementById('title').value == "" || document.getElementById('price').value == "" || document.getElementById('releasedate').value == "" || document.getElementById('rating').value == "" || document.getElementById('name').value == "") {
-				alert("Please fill out all fields.");
+				alert("Please fill out al fields.");
 			} else {
 				document.getElementById('form').submit();
 				alert("Form Submitted Successfully.");
@@ -47,15 +47,16 @@
 
 			
 
-			//if (isset($_POST['priority'])) {
+			if (isset($_POST['priority'])) {
+				alert("inside isset statement");
 
 				$priority = $_POST['priority'];
 				$title = $_POST['title'];
 				$price = $_POST['price'];
 				$releasedate = $_POST['releasedate'];
 				$rating = $_POST['rating'];
-				echo $price;
-				$query = "INSERT INTO games(priority, title, price, releasedate, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '" . $releasedate . "', '" . $rating . "')";
+				
+				$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '1', '1', '" . $releasedate . "', 'now()', '" . $rating . "')";
 				$result = pg_query($query);
 
 				if (!$result) { 
@@ -63,7 +64,7 @@
 					echo "Error with query: " . $errormessage; 
 					exit(); 
 				} 
-			//}
+			}
 
 			try {
 				$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
@@ -102,7 +103,7 @@
 							<td class="tg-yw4l"><input class="addField" id="releasedate" name="releasedate" placeholder=" Releasedate" type="text"></td>
 							<td class="tg-yw4l"><input class="addField" id="rating" name="rating" placeholder=" Rating" type="text"></td>
 							<td class="tg-yw4l"><input class="addField" id="name" name="name" placeholder=" Name" type="text"></td>
-							<td class=""><a href="" id="submit"><img class="add" id="add" src="add.png"></a></td>
+							<td class=""><a href="javascript:%20check_empty()" id="submit"><img class="add" id="add" src="add.png"></a></td>
 						</tr>
 					</form>
 				</div>
