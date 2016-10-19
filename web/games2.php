@@ -55,7 +55,7 @@
 				$releasedate = $_POST['releasedate'];
 				$rating = $_POST['rating'];
 				echo $price;
-				$query = "INSERT INTO games(priority, title, price, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '" . $releasedate . "', 'now()', '" . $rating . "')";
+				$query = "INSERT INTO games(priority, title, price, releasedate, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '" . $releasedate . "', '" . $rating . "')";
 				$result = pg_query($query);
 
 				if (!$result) { 
