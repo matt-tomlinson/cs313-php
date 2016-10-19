@@ -29,18 +29,15 @@
 					
 					$title = $_POST['title'];
 					
-					try{
-						$conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+					$conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 						
-						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						
-						$query = "DELETE FROM games WHERE title='$title'";
+					$query = "DELETE FROM games WHERE title='$title'";
 						
-						$conn->exec($query);
-					}
-					catch(PDOException $e){
-						echo $query . "<br>" . $e->getMessage();
-					}
+					$conn->exec($query);
+					
+					
 					$conn = null;
 				?>
 			} else {
