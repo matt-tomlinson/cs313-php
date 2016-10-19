@@ -12,16 +12,6 @@
 				alert("Form Submitted Successfully.");
 			}
 		}
-		function dropRow(title) {
-			let game = title;
-			let txt = 'Are you sure that you want to delete ${game}';
-			var r = confirm(txt);
-			if (r == true) {
-				alert('deleted');
-			} else {
-				alert('not deleted');
-			}
-		}
 	</script>
 </head>
 <body>
@@ -40,15 +30,15 @@
 			</tr>
 			
 			<?php
-			// default Heroku Postgres configuration URL
+			
 			$dbUrl = getenv('DATABASE_URL');
+			
 			if (empty($dbUrl)) {
-			// example localhost configuration URL with postgres username and a database called cs313db
 				$dbUrl = "postgres://postgres:password@localhost:5432/cs313db";
 			}
-
+			
 			$dbopts = parse_url($dbUrl);
-			//print "<p>$dbUrl</p>\n\n";
+			
 			$dbHost = $dbopts["host"]; 
 			$dbPort = $dbopts["port"]; 
 			$dbUser = $dbopts["user"]; 
@@ -69,7 +59,6 @@
 						
 						$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '1', '1', '" . $releasedate . "', 'now()', '" . $rating . "')";
 						
-						//$result = pg_query($query);
 						$conn->exec($query);
 					}
 					catch(PDOException $e){
@@ -91,13 +80,8 @@
 					echo '<td class="tg-yw4l">'.$row['releasedate'].'</td>';
 					echo '<td class="tg-yw4l">'.$row['rating'].'</td>';
 					echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="_top">'.$row['name'].'</a></td>';
-					echo '<td class=""><input type="image" onclick="dropRow('.$row['title'].')" src="delete.png" class="add"/></td>';
+					echo '<td class=""><input type="image" src="delete.png" class="add"/></td>';
 					echo '</tr>';
-					//echo '$_POST['title']';
-				//echo '<p>';
-				//echo '<strong>' . $row['priority'] . '. ' . $row['title'] . ' : ' . '</strong>';
-				//echo ' $' . $row['price']  . '.00  ' . $row['releasedate'];
-				//echo '</p>';
 				}
 			}
 			catch (PDOException $ex) {
