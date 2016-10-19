@@ -27,12 +27,14 @@
 					$dbPassword = $dbopts["pass"];
 					$dbName = ltrim($dbopts["path"],'/');
 					
+					$title = $_POST['title'];
+					
 					try{
 						$conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 						
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						
-						$query = "DELETE FROM games WHERE title='" . $title . "'";
+						$query = "DELETE FROM games WHERE title='$title'";
 						echo $query . "<br>";
 						
 						$conn->exec($query);
