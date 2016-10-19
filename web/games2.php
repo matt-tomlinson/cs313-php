@@ -47,7 +47,7 @@
 
 			
 
-			if (isset($_POST['priority'])) {
+			//if (isset($_POST['priority'])) {
 
 				$priority = $_POST['priority'];
 				$title = $_POST['title'];
@@ -63,7 +63,7 @@
 					echo "Error with query: " . $errormessage; 
 					exit(); 
 				} 
-			}
+			//}
 
 			try {
 				$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
