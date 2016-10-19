@@ -48,7 +48,6 @@
 			
 
 			if (isset($_POST['priority'])) {
-				alert("inside isset statement");
 
 				$priority = $_POST['priority'];
 				$title = $_POST['title'];
@@ -95,7 +94,7 @@
 
 			<div id="inputLine">
 				<div id="popupContact">
-					<form action="games2.php" id="form" method="post" name="form" target="targetframe">
+					<form action="games2Form.php" id="form" method="post" name="form" target="targetframe">
 						<tr>
 							<td class="tg-yw4l"><input class="addField" id="priority" name="priority" placeholder=" Priority" type="text"></td>
 							<td class="tg-yw4l"><input class="addField" id="title" name="title" placeholder=" Title" type="text"></td>
