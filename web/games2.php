@@ -12,6 +12,40 @@
 				alert("Form Submitted Successfully.");
 			}
 		}
+		function dropRow(title) {
+			var txt;
+			var r = confirm("Press a button!");
+			if (r == true) {
+				<?php 
+					// default Heroku Postgres configuration URL
+					$dbUrl = getenv('DATABASE_URL');
+
+					$dbopts = parse_url($dbUrl);
+					$dbHost = $dbopts["host"]; 
+					$dbPort = $dbopts["port"]; 
+					$dbUser = $dbopts["user"]; 
+					$dbPassword = $dbopts["pass"];
+					$dbName = ltrim($dbopts["path"],'/');
+					
+					try{
+						$conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+						
+						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+						
+						$query = "DELETE FROM games WHERE title='${title}'";
+						echo $query . "<br>";
+						//$result = pg_query($query);
+						$conn->exec($query);
+					}
+					catch(PDOException $e){
+						echo $query . "<br>" . $e->getMessage();
+					}
+					$conn = null;
+				?>
+			} else {
+				txt = "";
+			}
+		}
 	</script>
 </head>
 <body>
@@ -81,7 +115,7 @@
 					echo '<td class="tg-yw4l">'.$row['releasedate'].'</td>';
 					echo '<td class="tg-yw4l">'.$row['rating'].'</td>';
 					echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="_top">'.$row['name'].'</a></td>';
-					echo '<td class=""><input type="image" src="delete.png" class="add"/></td>';
+					echo '<td class=""><input type="image" onclick="dropRow('.$row['title'].')" src="delete.png" class="add"/></td>';
 					echo '</tr>';
 					//echo '$_POST['title']';
 				//echo '<p>';
