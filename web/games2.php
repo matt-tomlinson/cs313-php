@@ -45,26 +45,33 @@
 			$dbPassword = $dbopts["pass"];
 			$dbName = ltrim($dbopts["path"],'/');
 
-			try {
-				$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-				if (isset($_POST['priority'])) {
-
-					$priority = $_POST['priority'];
-					$title = $_POST['title'];
-					$price = $_POST['price'];
-					$releasedate = $_POST['releasedate'];
-					$rating = $_POST['rating'];
-					
-					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-					
-					$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '1', '1', '" . $releasedate . "', 'now()', '" . $rating . "')";
-					
-					//$result = pg_query($query);
-					$conn->exec($query);
-
+			if (isset($_POST['priority'])) {
+					try{
+						$conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+						
+						$priority = $_POST['priority'];
+						$title = $_POST['title'];
+						$price = $_POST['price'];
+						$releasedate = $_POST['releasedate'];
+						$rating = $_POST['rating'];
+						
+						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+						
+						$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '1', '1', '" . $releasedate . "', 'now()', '" . $rating . "')";
+						
+						//$result = pg_query($query);
+						$conn->exec($query);
+					}
+					catch(PDOException $e){
+						echo $query . "<br>" . $e->getMessage();
+					}
 					$conn = null;
-				}
+			}
+			
+			try {
+								
+				$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+				
 				foreach ($db->query('SELECT priority, title, price, releasedate, dateadded, rating, p.name, p.url FROM games g INNER JOIN publishers p on p.publisherid = g.publisherid ORDER BY priority') as $row)
 				{
 					echo '<tr>';
