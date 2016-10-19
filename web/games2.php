@@ -103,7 +103,7 @@
 							<td class="tg-yw4l"><input class="addField" id="releasedate" name="releasedate" placeholder=" Releasedate" type="text"></td>
 							<td class="tg-yw4l"><input class="addField" id="rating" name="rating" placeholder=" Rating" type="text"></td>
 							<td class="tg-yw4l"><input class="addField" id="name" name="name" placeholder=" Name" type="text"></td>
-							<td class=""><a href="javascript:%20check_empty()" id="submit"><img class="add" id="add" src="add.png"></a></td>
+							<td class=""><a href="" id="submit"><img class="add" id="add" src="add.png"></a></td>
 						</tr>
 					</form>
 				</div>
