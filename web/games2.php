@@ -47,7 +47,7 @@
 
 			
 
-			//if (isset($_POST['priority'])) {
+			if (isset($_POST['priority'])) {
 
 				$priority = $_POST['priority'];
 				$title = $_POST['title'];
@@ -55,7 +55,7 @@
 				$releasedate = $_POST['releasedate'];
 				$rating = $_POST['rating'];
 				echo $price;
-				$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '"1"', '"1"', '" . $releasedate . "', 'now()', '" . $rating . "')";
+				$query = "INSERT INTO games(priority, title, price, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '" . $releasedate . "', 'now()', '" . $rating . "')";
 				$result = pg_query($query);
 
 				if (!$result) { 
@@ -63,7 +63,7 @@
 					echo "Error with query: " . $errormessage; 
 					exit(); 
 				} 
-			//}
+			}
 
 			try {
 				$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
