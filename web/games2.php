@@ -35,7 +35,6 @@
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						
 						$query = "DELETE FROM games WHERE title='$title'";
-						echo $query . "<br>";
 						
 						$conn->exec($query);
 					}
