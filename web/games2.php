@@ -12,7 +12,7 @@
 				alert("Form Submitted Successfully.");
 			}
 		}
-		function dropRow(title) {
+		void function dropRow(title) {
 			var txt;
 			var r = confirm("Are you sure that you want to delete this ");
 			if (r == true) {
@@ -29,15 +29,19 @@
 					
 					$title = $_POST['title'];
 					
-					$conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+					try{
+						$conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 						
-					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						
-					$query = "DELETE FROM games WHERE title='$title'";
+						$query = "DELETE FROM games WHERE title='$title'";
+						echo $query . "<br>";
 						
-					$conn->exec($query);
-					
-					
+						$conn->exec($query);
+					}
+					catch(PDOException $e){
+						echo $query . "<br>" . $e->getMessage();
+					}
 					$conn = null;
 				?>
 			} else {
