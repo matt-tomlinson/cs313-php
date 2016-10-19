@@ -45,16 +45,16 @@
 			$dbPassword = $dbopts["pass"];
 			$dbName = ltrim($dbopts["path"],'/');
 
-			$dbconn = pg_connect('host=$dbHost dbname=$dbName user=$dbUser password=$dbPassword');
-
-			$priority = pg_escape_string($_POST['priority']);
-			$title = pg_escape_string($_POST['title']);
-			$price = pg_escape_string($_POST['price']);
-			$releasedate = pg_escape_string($_POST['releasedate']);
-			$rating = pg_escape_string($_POST['rating']);
+			
 
 			if (isset($_POST['priority'])) {
 				alert("inside isset statement");
+
+				$priority = $_POST['priority'];
+				$title = $_POST['title'];
+				$price = $_POST['price'];
+				$releasedate = $_POST['releasedate'];
+				$rating = $_POST['rating'];
 				
 				$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '1', '1', '" . $releasedate . "', 'now()', '" . $rating . "')";
 				$result = pg_query($query);
@@ -80,7 +80,7 @@
 					echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="_top">'.$row['name'].'</a></td>';
 					echo '<td class=""><input type="image" src="delete.png" class="add"/></td>';
 					echo '</tr>';
-					echo '$_POST['title']';
+					//echo '$_POST['title']';
 				//echo '<p>';
 				//echo '<strong>' . $row['priority'] . '. ' . $row['title'] . ' : ' . '</strong>';
 				//echo ' $' . $row['price']  . '.00  ' . $row['releasedate'];
