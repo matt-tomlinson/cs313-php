@@ -32,7 +32,7 @@
 						
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						
-						$query = "DELETE FROM games WHERE title='" . title . "'";
+						$query = "DELETE FROM games WHERE title='" . $title . "'";
 						echo $query . "<br>";
 						
 						$conn->exec($query);
@@ -117,11 +117,6 @@
 					echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="_top">'.$row['name'].'</a></td>';
 					echo '<td class=""><input type="image" onclick="dropRow('.$row['title'].')" src="delete.png" class="add"/></td>';
 					echo '</tr>';
-					//echo '$_POST['title']';
-				//echo '<p>';
-				//echo '<strong>' . $row['priority'] . '. ' . $row['title'] . ' : ' . '</strong>';
-				//echo ' $' . $row['price']  . '.00  ' . $row['releasedate'];
-				//echo '</p>';
 				}
 			}
 			catch (PDOException $ex) {
