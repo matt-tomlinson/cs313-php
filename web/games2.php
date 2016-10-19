@@ -6,7 +6,7 @@
 	<script>
 		function check_empty() {
 			if (document.getElementById('priority').value == "" || document.getElementById('title').value == "" || document.getElementById('price').value == "" || document.getElementById('releasedate').value == "" || document.getElementById('rating').value == "" || document.getElementById('name').value == "") {
-				alert("Please fill out al fields.");
+				alert("Please fill out all fields.");
 			} else {
 				document.getElementById('form').submit();
 				alert("Form Submitted Successfully.");
@@ -55,7 +55,7 @@
 				$price = $_POST['price'];
 				$releasedate = $_POST['releasedate'];
 				$rating = $_POST['rating'];
-				
+				echo $price;
 				$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '1', '1', '" . $releasedate . "', 'now()', '" . $rating . "')";
 				$result = pg_query($query);
 
