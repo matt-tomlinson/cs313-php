@@ -48,7 +48,6 @@
 			
 
 			//if (isset($_POST['priority'])) {
-				alert("inside isset statement");
 
 				$priority = $_POST['priority'];
 				$title = $_POST['title'];
