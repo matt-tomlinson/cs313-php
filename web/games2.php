@@ -150,7 +150,7 @@
 							<?php
 								foreach ($db->query('SELECT title FROM games ') as $row)
 								{
-									echo '<td class="tg-yw4l">'.$row['priority'].'</td>';
+									//echo '<td class="tg-yw4l">'.$row['priority'].'</td>';
 									echo '<option value="'.$row['title'].'">'.$row['title'].'</option>';
 								}
 								
