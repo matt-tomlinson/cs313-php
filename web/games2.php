@@ -5,7 +5,7 @@
 	<link rel='icon' type='image/x-icon' href='favicon.ico'/>
 	<script>
 		function check_empty() {
-			if (document.getElementById('priority').value == "" || document.getElementById('title').value == "" || document.getElementById('price').value == "" || document.getElementById('releasedate').value == "" || document.getElementById('rating').value == "" || document.getElementById('name').value == "") {
+			if (document.getElementById('priority').value == "" || document.getElementById('title').value == "" || document.getElementById('price').value == "" || document.getElementById('releasedate').value == "" || document.getElementById('rating').value == "") {
 				alert("Please fill out all fields.");
 			} else {
 				document.getElementById('form').submit();
