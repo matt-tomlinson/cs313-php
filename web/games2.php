@@ -66,6 +66,24 @@
 					$conn = null;
 			}
 			
+			if (isset($_POST['remove'])) {
+					try{
+						$conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+						
+						$title = $_POST['title'];
+						
+						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+						
+						$query = "DELETE FROM games where title='".$title."'";
+						
+						$conn->exec($query);
+					}
+					catch(PDOException $e){
+						echo $query . "<br>" . $e->getMessage();
+					}
+					$conn = null;
+			}
+			
 			try {
 								
 				$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
