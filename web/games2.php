@@ -124,11 +124,11 @@
 				</tr>
 					<form action="games2.php" id="form" method="post" name="form" target="targetframe">
 						<tr>
-							<td class="tg-yw4l"><input class="addField" id="priority" name="priority" placeholder=" Priority" type="text"></td>
+							<td class="tg-yw4l"><input class="addFieldint" id="priority" name="priority" placeholder=" Priority" type="text"></td>
 							<td class="tg-yw4l"><input class="addField" id="title" name="title" placeholder=" Title" type="text"></td>
-							<td class="tg-yw4l"><input class="addField" id="price" name="price" placeholder=" Price" type="text"></td>
+							<td class="tg-yw4l"><input class="addFieldint" id="price" name="price" placeholder=" Price" type="text"></td>
 							<td class="tg-yw4l"><input class="addField" id="releasedate" name="releasedate" placeholder=" Releasedate" type="date"></td>
-							<td class="tg-yw4l"><input class="addField" id="rating" name="rating" placeholder=" Rating" type="text"></td>
+							<td class="tg-yw4l"><input class="addFieldint" id="rating" name="rating" placeholder=" Rating" type="text"></td>
 							<td class="tg-yw4l">
 							<select name="name">
 							<?php
