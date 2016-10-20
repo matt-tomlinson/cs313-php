@@ -53,10 +53,11 @@
 						$price = $_POST['price'];
 						$releasedate = $_POST['releasedate'];
 						$rating = $_POST['rating'];
+						$name = $_POST['name'];
 						
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						
-						$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '1', '1', '" . $releasedate . "', 'now()', '" . $rating . "')";
+						$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '1', '".$name."', '" . $releasedate . "', 'now()', '" . $rating . "')";
 						
 						$conn->exec($query);
 					}
@@ -96,7 +97,8 @@
 					echo '<td class="tg-yw4l">'.'$'.$row['price'].'</td>';
 					echo '<td class="tg-yw4l">'.$row['releasedate'].'</td>';
 					echo '<td class="tg-yw4l">'.$row['rating'].'</td>';
-					echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="_top">'.$row['name'].'</a></td>';
+					echo '<td class="tg-yw4l">'.$row['name'].'</td>';
+					//echo '<td class="tg-yw4l"><a href="'.$row['url'].'" class="tableLink" target="_top">'.$row['name'].'</a></td>';
 					echo '</tr>';
 				}
 			}
@@ -145,12 +147,10 @@
 					<form action="games2.php" id="form" method="post" name="form" target="targetframe">
 						<tr>
 							<td class="tg-yw4l">
-							<input class="addField" id="title" name="title" placeholder=" Title" type="text">
 							<select name="title">
 							<?php
 								foreach ($db->query('SELECT title FROM games ') as $row)
 								{
-									//echo '<td class="tg-yw4l">'.$row['priority'].'</td>';
 									echo '<option value="'.$row['title'].'">'.$row['title'].'</option>';
 								}
 								
