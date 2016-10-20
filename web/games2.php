@@ -125,7 +125,7 @@
 							<td class="tg-yw4l"><input class="addField" id="priority" name="priority" placeholder=" Priority" type="text"></td>
 							<td class="tg-yw4l"><input class="addField" id="title" name="title" placeholder=" Title" type="text"></td>
 							<td class="tg-yw4l"><input class="addField" id="price" name="price" placeholder=" Price" type="text"></td>
-							<td class="tg-yw4l"><input class="addField" id="releasedate" name="releasedate" placeholder=" Releasedate" type="text"></td>
+							<td class="tg-yw4l"><input class="addField" id="releasedate" name="releasedate" placeholder=" Releasedate" type="date"></td>
 							<td class="tg-yw4l"><input class="addField" id="rating" name="rating" placeholder=" Rating" type="text"></td>
 							<td class="tg-yw4l"><input class="addField" id="name" name="name" placeholder=" Name" type="text"></td>
 							<td class=""><a href="javascript:%20check_empty()" id="submit"><img class="add" id="add" src="add.png"></a></td>
@@ -144,7 +144,19 @@
 				</tr>
 					<form action="games2.php" id="form" method="post" name="form" target="targetframe">
 						<tr>
-							<td class="tg-yw4l"><input class="addField" id="title" name="title" placeholder=" Title" type="text"></td>
+							<td class="tg-yw4l">
+							<input class="addField" id="title" name="title" placeholder=" Title" type="text">
+							<select name="title">
+							<?php
+								foreach ($db->query('SELECT title FROM games ') as $row)
+								{
+									echo '<td class="tg-yw4l">'.$row['priority'].'</td>';
+									echo '<option value="'.$row['title'].'">'.$row['title'].'</option>';
+								}
+								
+							?>
+							</select>
+							</td>
 							<td class=""><input type="image" src="delete.png" name="remove" value="true" class="add"/></td>
 						</tr>
 					</form>
