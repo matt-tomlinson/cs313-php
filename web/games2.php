@@ -129,7 +129,17 @@
 							<td class="tg-yw4l"><input class="addField" id="price" name="price" placeholder=" Price" type="text"></td>
 							<td class="tg-yw4l"><input class="addField" id="releasedate" name="releasedate" placeholder=" Releasedate" type="date"></td>
 							<td class="tg-yw4l"><input class="addField" id="rating" name="rating" placeholder=" Rating" type="text"></td>
-							<td class="tg-yw4l"><input class="addField" id="name" name="name" placeholder=" Name" type="text"></td>
+							<td class="tg-yw4l">
+							<select name="name">
+							<?php
+								foreach ($db->query('SELECT * FROM publishers ') as $row)
+								{
+									echo '<option value="'.$row['publisherid'].'">'.$row['name'].'</option>';
+								}
+							?>
+							</select>
+							</td>
+							<!--<td class="tg-yw4l"><input class="addField" id="name" name="name" placeholder=" Name" type="text"></td>-->
 							<td class=""><a href="javascript:%20check_empty()" id="submit"><img class="add" id="add" src="add.png"></a></td>
 							<input type="hidden" name="add" value="true">
 						</tr>
