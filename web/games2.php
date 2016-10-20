@@ -57,7 +57,7 @@
 						
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						
-						$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '1', '".$name."', '" . $releasedate . "', 'now()', '" . $rating . "')";
+						$query = "INSERT INTO games(priority, title, price, publisherid, platformid, releasedate, dateadded, rating) VALUES('" . $priority . "', '" . $title . "', '" . $price . "', '".$name."', '1', '" . $releasedate . "', 'now()', '" . $rating . "')";
 						
 						$conn->exec($query);
 					}
