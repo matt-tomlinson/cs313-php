@@ -58,11 +58,12 @@
 				}
 			}
 		}
+		catch (PDOException $ex) {
+			print "<p>error: $ex->getMessage() </p>\n\n";
+			die();
+		}
 	}
-	catch (PDOException $ex) {
-		print "<p>error: $ex->getMessage() </p>\n\n";
-		die();
-	}
+	
 	?>
 </body>
 </html>

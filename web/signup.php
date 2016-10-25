@@ -43,7 +43,7 @@
 	$dbName = ltrim($dbopts["path"],'/');
 
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {
-		try{
+		try {
 			$conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
 			$username = $_POST['username'];
