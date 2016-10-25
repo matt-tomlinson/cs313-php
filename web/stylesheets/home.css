@@ -252,6 +252,14 @@ ul{
     width: 50%;
     padding: 10px;
 }
+.signupbox {
+    text-align: center;
+    background-color: #58677A;
+    border: solid black 2px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
 .login {
     margin: auto;
     margin-top: 10px;

@@ -10,7 +10,6 @@
 				return false;
 			} else {
 				document.getElementById('form').submit();
-				alert("Form Submitted Successfully.");
 			}
 		}
 		function loginFailed(){

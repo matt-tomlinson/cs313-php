@@ -16,7 +16,7 @@
 	</script>
 </head>
 <body>
-	<div class="loginbox">
+	<div class="signupbox">
 		<h1 class="headerText">Sign-up</h1>
 		<div>
 			<form onsubmit="return check_empty()" action="login.php" id="form" method="post" name="form">
