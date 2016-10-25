@@ -35,3 +35,12 @@ insert into games (priority,title,price,publisherid,platformid,releasedate,datea
 SELECT priority, title, price, releasedate, dateadded, rating, p.name, p.url 
 FROM games g
 INNER JOIN publishers p on p.publisherid = g.publisherid
+
+create table users (
+	userid serial primary key,
+	username text not null,
+	password text not null
+);
+
+insert into users (username, password)
+	values ('matt','admin');
