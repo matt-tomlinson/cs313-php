@@ -11,7 +11,7 @@
         <?php 
 
         //echo "<p>Welcome ".$username."!</p>";
-        echo '<p>Welcome'.$_POST['username'].'!</p>';
+        echo '<p>Welcome'.$_SESSION["loggedin"].'!</p>';
         ?>
     </div>
 </body>

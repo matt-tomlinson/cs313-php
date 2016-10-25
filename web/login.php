@@ -29,6 +29,13 @@
 	</div>
 	<hr>
 	<?php
+
+	session_start();
+
+	if (isset($_SESSION['loggedin'])) {
+		header("Location: loggedin.php");
+		exit;
+	}
 	// default Heroku Postgres configuration URL
 	$dbUrl = getenv('DATABASE_URL');
 	if (empty($dbUrl)) {
@@ -55,13 +62,14 @@
 			foreach ($db->query($q) as $row) {
 
 				if (password_verify($password, $hash)) {
-    				header("Location: loggedin.php");
-    				exit;
+					$_SESSION["loggedin"] = $username;
+					header("Location: loggedin.php");
+					exit;
 				}
 				else {
     				//$message = "Invalid Credentials";
 					//echo "<script type='text/javascript'>alert('$message');</script>";
-					echo "<span style='color:red'>Invalid Credentials</span>";
+					//echo "<span style='color:red'>Invalid Credentials</span>";
 				}
 			}
 		}
