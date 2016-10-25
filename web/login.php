@@ -27,6 +27,7 @@
 				<input class="login" type="submit" name="login" value="Login" />
 			</form>
 			<a href="signup.php" target="targetframe">Sign-up</a>
+			<span id="error"></span>
 		</div>
 	</div>
 	<hr>

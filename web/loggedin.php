@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
 </head>
 <body>
-    <h1 class="headerText">Welcome page</h1>        
+    <h1 class="headerText">Student Survey Results</h1>        
     <div class="answerBox">
         <?php 
 
@@ -30,7 +30,21 @@
                 $username = $_POST['username'];
                 $password = $_POST['password'];
 
-                echo '<p>Welcome '.$row['username'].'!</p>';
+                $hash = password_hash($password, PASSWORD_DEFAULT);
+
+                $q = "SELECT * FROM users WHERE username='".$username."'";
+                foreach ($db->query($q) as $row) {
+                    //echo '<p>'.$row['username'].'</p>';
+                    //echo '<p>'.$row['password'].'</p>';
+
+                    if (password_verify($password, $hash)) {
+                        header("Location: loggedin.php");
+                        exit;
+                    }
+                    else {
+                        echo '<script type="text/javascript">','loginFailed();','</script>';
+                    }
+                }
             }
             catch (PDOException $ex) {
                 print "<p>error: $ex->getMessage() </p>\n\n";
