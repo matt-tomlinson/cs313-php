@@ -61,7 +61,7 @@
 				else {
     				//$message = "Invalid Credentials";
 					//echo "<script type='text/javascript'>alert('$message');</script>";
-					echo "<span style="color:red">Invalid Credentials</span>";
+					echo "<span style='color:red'>Invalid Credentials</span>";
 				}
 			}
 		}
