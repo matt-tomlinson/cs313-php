@@ -22,7 +22,7 @@
 			<form onsubmit="return check_empty()" action="signup.php" id="form" method="post" name="form">
 				<input class="login" id="username" name="username" placeholder="Username" type="text">
 				<input class="login" id="password" name="password" placeholder="Password" type="text">
-				<input class="login" type="submit" name="login" value="Login" />
+				<input class="login" type="submit" name="login" value="Submit" />
 			</form>
 			<a href="login.php" target="targetframe">Back to login page</a>
 		</div>

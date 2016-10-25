@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="loginbox">
-	<h1 class="headerText">Login</h1>
+		<h1 class="headerText">Login</h1>
 		<div>
 			<form onsubmit="return check_empty()" action="login.php" id="form" method="post" name="form">
 				<input class="login" id="username" name="username" placeholder="Username" type="text">
@@ -42,20 +42,19 @@
 	$dbPassword = $dbopts["pass"];
 	$dbName = ltrim($dbopts["path"],'/');
 
-	try {
-		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+	if ($_SERVER['REQUEST_METHOD'] == "POST") {
+		try {
+			$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-		if ($_SERVER['REQUEST_METHOD'] == "POST") {
-			$q = "SELECT * FROM users "
-			."WHERE `username`='".$_POST["username"]."' "
-			."AND `password`=PASSWORD('".$_POST["password"]."') "
-			."LIMIT 1";
+			$username = $_POST['username'];
+
+			$q = "SELECT * FROM users WHERE username='".$username."'";
 			foreach ($db->query($q) as $row) {
 				echo '<p>'.$row['username'].'</p>';
 				echo '<p>'.$row['password'].'</p>';
 
-				if ($_POST["username"] == $row['username']){
-					echo '<p>Usernames match</p>';
+				if ($username == $row['username']){
+					echo '<p>Usernames match!</p>';
 				}
 			}
 		}
