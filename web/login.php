@@ -12,9 +12,6 @@
 				document.getElementById('form').submit();
 			}
 		}
-		function loginFailed(){
-			alert("Invalid Credentials");
-		}
 	</script>
 </head>
 <body>
@@ -62,9 +59,8 @@
     				exit;
 				}
 				else {
-    				echo '<script type="text/javascript">';
-    				echo 'loginFailed();';
-    				echo '</script>';
+    				$message = "Invalid Credentials";
+					echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 			}
 		}

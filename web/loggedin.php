@@ -10,9 +10,8 @@
     <div class="answerBox">
         <?php 
 
-        $username = $_POST['username'];
-
-        echo "<p>Welcome ".$username."!</p>";
+        //echo "<p>Welcome ".$username."!</p>";
+        echo '<p>Welcome'.$_POST['username'].'!</p>';
         ?>
     </div>
 </body>

@@ -21,7 +21,7 @@
 		<div>
 			<form onsubmit="return check_empty()" action="signup.php" id="form" method="post" name="form">
 				<input class="login" id="username" name="signupusername" placeholder="Username" type="text">
-				<input class="login" id="password" name="signuppassword" placeholder="Password" type="text">
+				<input class="login" id="password" name="signuppassword" placeholder="Password" type="password">
 				<input class="login" type="submit" name="login" value="Submit" />
 				<input type="hidden" name="adduser" value="true">
 			</form>
@@ -69,7 +69,7 @@
 		header("Location: login.php");
 		exit;
 	}
-	
+
 	?>
 </body>
 </html>
