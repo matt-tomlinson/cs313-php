@@ -13,6 +13,9 @@
 				alert("Form Submitted Successfully.");
 			}
 		}
+		function loginFailed(){
+			alert("Invalid Credentials");
+		}
 	</script>
 </head>
 <body>
@@ -47,14 +50,21 @@
 			$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
 			$username = $_POST['username'];
+			$password = $_POST['password'];
+
+			$hash = password_hash($password, PASSWORD_DEFAULT);
 
 			$q = "SELECT * FROM users WHERE username='".$username."'";
 			foreach ($db->query($q) as $row) {
 				echo '<p>'.$row['username'].'</p>';
 				echo '<p>'.$row['password'].'</p>';
 
-				if ($username == $row['username']){
-					echo '<p>Usernames match!</p>';
+				if (password_verify($password, $hash)) {
+    				header("Location: loggedin.php");
+    				exit;
+				}
+				else {
+    				echo '<script type="text/javascript">','loginFailed();','</script>';
 				}
 			}
 		}
