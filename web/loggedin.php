@@ -10,48 +10,9 @@
     <div class="answerBox">
         <?php 
 
-        $dbUrl = getenv('DATABASE_URL');
-        if (empty($dbUrl)) {
+        $username = $_POST['username'];
 
-            $dbUrl = "postgres://postgres:password@localhost:5432/cs313db";
-        }
-
-        $dbopts = parse_url($dbUrl);
-        $dbHost = $dbopts["host"];
-        $dbPort = $dbopts["port"];
-        $dbUser = $dbopts["user"];
-        $dbPassword = $dbopts["pass"];
-        $dbName = ltrim($dbopts["path"],'/');
-
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            try {
-                $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-
-                $hash = password_hash($password, PASSWORD_DEFAULT);
-
-                $q = "SELECT * FROM users WHERE username='".$username."'";
-                foreach ($db->query($q) as $row) {
-                    //echo '<p>'.$row['username'].'</p>';
-                    //echo '<p>'.$row['password'].'</p>';
-
-                    if (password_verify($password, $hash)) {
-                        header("Location: loggedin.php");
-                        exit;
-                    }
-                    else {
-                        echo '<script type="text/javascript">','loginFailed();','</script>';
-                    }
-                }
-            }
-            catch (PDOException $ex) {
-                print "<p>error: $ex->getMessage() </p>\n\n";
-                die();
-            }
-        }
-
+        echo "<p>Welcome ".$username."!</p>";
         ?>
     </div>
 </body>
