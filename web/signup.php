@@ -16,7 +16,7 @@
 	</script>
 </head>
 <body>
-	<div class="loginbox">
+	<div class="signupbox">
 		<h1 class="headerText">Sign-up</h1>
 		<div>
 			<form onsubmit="return check_empty()" action="signup.php" id="form" method="post" name="form">
@@ -43,7 +43,7 @@
 	$dbPassword = $dbopts["pass"];
 	$dbName = ltrim($dbopts["path"],'/');
 
-	if (isset($_POST['add'])) {
+	if (isset($_POST['adduser'])) {
 		header("Location: login.php");
     	exit;
 	}
