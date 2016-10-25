@@ -10,7 +10,7 @@
 				return false;
 			} else {
 				document.getElementById('form').submit();
-				alert("Form Submitted Successfully.");
+				alert("Registered new user");
 			}
 		}
 	</script>
@@ -19,7 +19,7 @@
 	<div class="loginbox">
 		<h1 class="headerText">Sign-up</h1>
 		<div>
-			<form onsubmit="return check_empty()" action="signup.php" id="form" method="post" name="form">
+			<form onsubmit="return check_empty()" action="login.php" id="form" method="post" name="form">
 				<input class="login" id="username" name="username" placeholder="Username" type="text">
 				<input class="login" id="password" name="password" placeholder="Password" type="text">
 				<input class="login" type="submit" name="login" value="Submit" />

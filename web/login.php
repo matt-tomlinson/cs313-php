@@ -64,7 +64,9 @@
     				exit;
 				}
 				else {
-    				echo '<script type="text/javascript">','loginFailed();','</script>';
+    				echo '<script type="text/javascript">';
+    				echo 'loginFailed();';
+    				echo '</script>';
 				}
 			}
 		}
