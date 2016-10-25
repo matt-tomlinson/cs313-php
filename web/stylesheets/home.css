@@ -236,6 +236,14 @@ ul{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
+.addFieldint{
+	color:#04003a;
+	background-color:#ededed;
+	width: 50px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
 th.tg-sort-header::-moz-selection{ 
     background:transparent; 
 }
