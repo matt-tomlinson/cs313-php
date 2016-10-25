@@ -20,8 +20,8 @@
 		<h1 class="headerText">Sign-up</h1>
 		<div>
 			<form onsubmit="return check_empty()" action="signup.php" id="form" method="post" name="form">
-				<input class="login" id="username" name="username" placeholder="Username" type="text">
-				<input class="login" id="password" name="password" placeholder="Password" type="text">
+				<input class="login" id="username" name="signupusername" placeholder="Username" type="text">
+				<input class="login" id="password" name="signuppassword" placeholder="Password" type="text">
 				<input class="login" type="submit" name="login" value="Submit" />
 				<input type="hidden" name="adduser" value="true">
 			</form>
@@ -52,8 +52,8 @@
 		try {
 			$conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-			$username = $_POST['username'];
-			$password = $_POST['password'];
+			$username = $_POST['signupusername'];
+			$password = $_POST['signuppassword'];
 
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
