@@ -56,10 +56,8 @@
 
 			$q = "SELECT * FROM users WHERE username='".$username."'";
 			foreach ($db->query($q) as $row) {
-				echo '<p>'.$row['username'].'</p>';
-				echo '<p>'.$row['password'].'</p>';
 
-				if (password_verify($password, $hash)) {
+				if (password_verify($row['password'], $hash)) {
     				header("Location: loggedin.php");
     				exit;
 				}
