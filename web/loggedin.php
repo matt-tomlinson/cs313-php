@@ -9,9 +9,9 @@
     <h1 class="headerText">Student Survey Results</h1>        
     <div class="answerBox">
         <?php 
-
-        //echo "<p>Welcome ".$username."!</p>";
-        echo '<p>Welcome'.$_SESSION["loggedin"].'!</p>';
+        $username = $_POST['username'];
+        echo '<p>Welcome '. $username. '!</p>';
+        echo '<p>Welcome '. $_SESSION['loggedin'] .'!</p>';
         ?>
     </div>
 </body>
