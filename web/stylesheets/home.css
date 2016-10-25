@@ -244,6 +244,20 @@ ul{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
+.loginbox {
+    text-align: center;
+    background-color: #353D47;
+    border: solid black 2px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.login {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
 th.tg-sort-header::-moz-selection{ 
     background:transparent; 
 }

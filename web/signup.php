@@ -17,14 +17,14 @@
 </head>
 <body>
 	<div class="loginbox">
-	<h1 class="headerText">Login</h1>
+		<h1 class="headerText">Sign-up</h1>
 		<div>
-			<form onsubmit="return check_empty()" action="login.php" id="form" method="post" name="form">
+			<form onsubmit="return check_empty()" action="signup.php" id="form" method="post" name="form">
 				<input class="login" id="username" name="username" placeholder="Username" type="text">
-				<input class="login" id="password" name="password" placeholder="Password" type="password">
+				<input class="login" id="password" name="password" placeholder="Password" type="text">
 				<input class="login" type="submit" name="login" value="Login" />
 			</form>
-			<a href="signup.php" target="targetframe">Sign-up</a>
+			<a href="login.php" target="targetframe">Back to login page</a>
 		</div>
 	</div>
 	<hr>
@@ -42,27 +42,26 @@
 	$dbPassword = $dbopts["pass"];
 	$dbName = ltrim($dbopts["path"],'/');
 
-	try {
-		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+	if ($_SERVER['REQUEST_METHOD'] == "POST") {
+		try{
+			$conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-		if ($_SERVER['REQUEST_METHOD'] == "POST") {
-			$q = "SELECT * FROM users "
-			."WHERE `username`='".$_POST["username"]."' "
-			."AND `password`=PASSWORD('".$_POST["password"]."') "
-			."LIMIT 1";
-			foreach ($db->query($q) as $row) {
-				echo '<p>'.$row['username'].'</p>';
-				echo '<p>'.$row['password'].'</p>';
+			$username = $_POST['username'];
+			$password = $_POST['password'];
 
-				if ($_POST["username"] == $row['username']){
-					echo '<p>Usernames match</p>';
-				}
-			}
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+			$hash = password_hash($password, PASSWORD_DEFAULT);
+
+			$query = "INSERT INTO users (username, password) VALUES('" . $username . "', '" . $hash . "')";
+
+			$conn->exec($query);
 		}
-	}
-	catch (PDOException $ex) {
-		print "<p>error: $ex->getMessage() </p>\n\n";
-		die();
+		catch(PDOException $e){
+			echo $query . "<br>" . $e->getMessage();
+		}
+
+		$conn = null;
 	}
 	?>
 </body>
