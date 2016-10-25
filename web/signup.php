@@ -16,13 +16,14 @@
 	</script>
 </head>
 <body>
-	<div class="signupbox">
+	<div class="loginbox">
 		<h1 class="headerText">Sign-up</h1>
 		<div>
-			<form onsubmit="return check_empty()" action="login.php" id="form" method="post" name="form">
+			<form onsubmit="return check_empty()" action="signup.php" id="form" method="post" name="form">
 				<input class="login" id="username" name="username" placeholder="Username" type="text">
 				<input class="login" id="password" name="password" placeholder="Password" type="text">
 				<input class="login" type="submit" name="login" value="Submit" />
+				<input type="hidden" name="adduser" value="true">
 			</form>
 			<a href="login.php" target="targetframe">Back to login page</a>
 		</div>
@@ -41,6 +42,11 @@
 	$dbUser = $dbopts["user"];
 	$dbPassword = $dbopts["pass"];
 	$dbName = ltrim($dbopts["path"],'/');
+
+	if (isset($_POST['add'])) {
+		header("Location: login.php");
+    	exit;
+	}
 
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		try {
