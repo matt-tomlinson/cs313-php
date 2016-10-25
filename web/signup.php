@@ -43,11 +43,6 @@
 	$dbPassword = $dbopts["pass"];
 	$dbName = ltrim($dbopts["path"],'/');
 
-	if (isset($_POST['adduser'])) {
-		header("Location: login.php");
-    	exit;
-	}
-
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		try {
 			$conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
@@ -69,6 +64,12 @@
 
 		$conn = null;
 	}
+
+	if (isset($_POST['adduser'])) {
+		header("Location: login.php");
+		exit;
+	}
+	
 	?>
 </body>
 </html>
