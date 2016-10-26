@@ -29,12 +29,15 @@
 
                 $username = $_POST['username'];
                 $password = $_POST['password'];
-
+                $_SESSION['loggedin'] = "true";
                 $q = "SELECT password FROM users WHERE username='".$username."'";
                 foreach ($db->query($q) as $row) {
 
                     $hash = password_hash($password, PASSWORD_DEFAULT);
-                    
+                    echo '<h2 class="headerText">hash: '. $hash. '!</h2>';
+                    echo '<h2 class="headerText">row[password]: '. $row['password'] . '!</h2>';
+                    echo '<h2 class="headerText">username: '. $username. '!</h2>';
+                    echo '<h2 class="headerText">password: '. $password. '!</h2>';
 
                     if (password_verify($row['password'], $hash)) {
                         $_SESSION['loggedin'] = "true";
@@ -56,11 +59,6 @@
             exit;
         }
 
-        echo '<h2 class="headerText">hash: '. $hash. '!</h2>';
-        echo '<h2 class="headerText">row[password]: '. $row['password'] . '!</h2>';
-        echo '<h2 class="headerText">username: '. $username. '!</h2>';
-        echo '<h2 class="headerText">password: '. $password. '!</h2>';
-        
         ?>
     </div>
 </body>
