@@ -266,6 +266,11 @@ ul{
     margin-bottom: 10px;
     display: block;
 }
+.errorspan {
+    margin: 10px;
+    color:red; 
+    display: block;
+}
 th.tg-sort-header::-moz-selection{ 
     background:transparent; 
 }

@@ -16,15 +16,18 @@
 		function check_empty() {
 			if (document.getElementById('username').value == "" || document.getElementById('password').value == "" ) {
 				//alert("Please fill out all fields.");
-				document.getElementById("error").textContent= "Invalid Credentials";
+				document.getElementById("error").textContent= "Empty fields exist.";
 				return false;
 			} else {
 				document.getElementById('form').submit();
 			}
 		}
+		function load_errors(){
+			document.getElementById("error").textContent= <?php echo $_SESSION['error']; ?>;
+		}
 	</script>
 </head>
-<body>
+<body onload="load_errors();">
 	<div class="loginbox">
 		<h1 class="headerText">Login</h1>
 		<div>
@@ -34,7 +37,7 @@
 				<input class="login" type="submit" name="login" value="Login" />
 			</form>
 			<a href="signup.php" target="targetframe">Sign-up</a>
-			<span id="error" style="color:red; display: block;"></span>
+			<span id="error" class="errorspan"></span>
 		</div>
 	</div>
 	<hr>

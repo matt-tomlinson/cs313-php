@@ -34,15 +34,10 @@
                 $q = "SELECT password FROM users WHERE username='".$username."'";
                 foreach ($db->query($q) as $row) {
 
-                    $hash = password_hash($password, PASSWORD_DEFAULT);
-                    echo '<h2 class="headerText">current hash: '. $hash. '!</h2>';
-                    echo '<h2 class="headerText">password: '. $password. '!</h2>';
-                    echo '<h2 class="headerText">row[password]: '. $row['password'] . '!</h2>';
-                    echo '<h2 class="headerText">username: '. $username. '!</h2>';
-
                     if (password_verify($password, $row['password'])) {
-                        $_SESSION['loggedin'] = "true";
+                        $_SESSION['loggedin'] = $username;
                     } else {
+                        $_SESSION['error'] = "Invalid credentials";
                         header("Location: login.php");
                         exit;
                     }
@@ -52,6 +47,7 @@
                 print "<p>error: $ex->getMessage() </p>\n\n";
                 die();
             }
+            echo '<h2 class="headerText">Welcome '. $username. '!</h2>';
         }
 
 
