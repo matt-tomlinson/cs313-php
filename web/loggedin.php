@@ -9,6 +9,7 @@
     <h1 class="headerText">Login Page</h1>        
     <div class="answerBox">
         <?php
+        session_start();
 
         if (isset($_SESSION['loggedin'])) {
             header("Location: loggedin.php");
@@ -41,7 +42,7 @@
                     
 
                     if (password_verify($row['password'], $hash)) {
-
+                        $_SESSION['loggedin'] = "true";
                     } else {
                         header("Location: login.php");
                         exit;
@@ -54,7 +55,9 @@
             }
         }
 
-        echo '<h2 class="headerText">Welcome '. $username. '!</h2>';
+        echo '<h2 class="headerText">username: '. $username. '!</h2>';
+        echo '<h2 class="headerText">password: '. $password. '!</h2>';
+        echo '<h2 class="headerText">hash: '. $hash. '!</h2>';
 
         ?>
     </div>

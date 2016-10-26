@@ -1,3 +1,13 @@
+<?php
+
+	session_start();
+
+	if (isset($_SESSION['loggedin'])) {
+		header("Location: loggedin.php");
+		exit;
+	}
+}
+?>
 <html>
 <head>
 	<title>Matt Tomlinson's Home Page</title>
@@ -29,10 +39,5 @@
 		</div>
 	</div>
 	<hr>
-	<?php
-
-	session_start();
-
-	?>
 </body>
 </html>
