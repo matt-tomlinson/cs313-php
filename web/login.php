@@ -38,7 +38,7 @@
 				<input class="login" type="submit" name="login" value="Login" />
 			</form>
 			<a href="signup.php" target="targetframe">Sign-up</a>
-			<span id="error" class="errorspan"></span>
+			<span onload="load_errors();" id="error" class="errorspan"></span>
 		</div>
 	</div>
 	<hr>
