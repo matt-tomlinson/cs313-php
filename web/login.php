@@ -22,10 +22,6 @@
 				document.getElementById('form').submit();
 			}
 		}
-		function load_errors(){
-			<?php echo 'var error = "'.json_encode($_SESSION['error']).'";'?>
-			document.getElementById("error").textContent = error;
-		}
 	</script>
 </head>
 <body>
@@ -38,7 +34,7 @@
 				<input class="login" type="submit" name="login" value="Login" />
 			</form>
 			<a href="signup.php" target="targetframe">Sign-up</a>
-			<span onload="load_errors();" id="error" class="errorspan"></span>
+			<span id="error" class="errorspan"><?php echo $_SESSION['error']; ?></span>
 		</div>
 	</div>
 	<hr>
