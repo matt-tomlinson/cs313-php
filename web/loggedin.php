@@ -16,7 +16,7 @@
         }
 
         $dbUrl = getenv('DATABASE_URL');
-        
+
         if (empty($dbUrl)) {
             $dbUrl = "postgres://postgres:password@localhost:5432/cs313db";
         }
@@ -59,7 +59,6 @@
         }
 
         echo '<p>Welcome '. $username. '!</p>';
-        echo '<p>Welcome '. $_SESSION['loggedin'] .'!</p>';
 
         ?>
     </div>
