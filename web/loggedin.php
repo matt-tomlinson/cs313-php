@@ -51,6 +51,7 @@
         echo '<h2 class="headerText">Welcome '. $_SESSION['loggedin'] . '!</h2>';
 
         if (!isset($_SESSION['loggedin'])) {
+            $_SESSION['error'] = "Invalid credentials";
             header("Location: login.php");
             exit;
         }
