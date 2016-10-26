@@ -6,7 +6,6 @@
 		header("Location: loggedin.php");
 		exit;
 	}
-}
 ?>
 <html>
 <head>
