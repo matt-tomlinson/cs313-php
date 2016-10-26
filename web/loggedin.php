@@ -47,9 +47,8 @@
                 print "<p>error: $ex->getMessage() </p>\n\n";
                 die();
             }
-            echo '<h2 class="headerText">Welcome '. $username. '!</h2>';
         }
-
+        echo '<h2 class="headerText">Welcome '. $_SESSION['loggedin'] . '!</h2>';
 
         if (!isset($_SESSION['loggedin'])) {
             header("Location: login.php");
