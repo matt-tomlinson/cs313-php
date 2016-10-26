@@ -23,11 +23,12 @@
 			}
 		}
 		function load_errors(){
-			document.getElementById("error").textContent= <?php echo $_SESSION['error']; ?>;
+			<?php echo 'var error = "'.json_encode($_SESSION['error']).'";'?>
+			document.getElementById("error").textContent = error;
 		}
 	</script>
 </head>
-<body onload="load_errors();">
+<body>
 	<div class="loginbox">
 		<h1 class="headerText">Login</h1>
 		<div>
