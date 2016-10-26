@@ -34,21 +34,17 @@
                 $username = $_POST['username'];
                 $password = $_POST['password'];
 
-                $hash = password_hash($password, PASSWORD_DEFAULT);
-
-                $q = "SELECT * FROM users WHERE username='".$username."'";
+                $q = "SELECT password FROM users WHERE username='".$username."'";
                 foreach ($db->query($q) as $row) {
 
-                    if (password_verify($password, $hash)) {
-                        //$message = "Invalid Credentials";
-                        //echo "<script type='text/javascript'>alert('$message');</script>";
-                        //echo "<span style='color:red'>Invalid Credentials</span>";
-                    }
-                    else {
-                        $_SESSION["loggedin"] = $username;
-                        header("Location: loggedin.php");
-                        exit;
+                    $hash = password_hash($password, PASSWORD_DEFAULT);
+                    
 
+                    if (password_verify($row['password'], $hash)) {
+
+                    } else {
+                        header("Location: login.php");
+                        exit;
                     }
                 }
             }
@@ -58,7 +54,7 @@
             }
         }
 
-        echo '<p>Welcome '. $username. '!</p>';
+        echo '<h2 class="headerText">Welcome '. $username. '!</h2>';
 
         ?>
     </div>
