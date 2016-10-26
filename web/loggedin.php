@@ -35,7 +35,9 @@
 
                     $hash = password_hash($password, PASSWORD_DEFAULT);
                     echo '<h2 class="headerText">hash: '. $hash. '!</h2>';
-                    echo '<h2 class="headerText">password: '. $row['password'] . '!</h2>';
+                    echo '<h2 class="headerText">row[password]: '. $row['password'] . '!</h2>';
+                    echo '<h2 class="headerText">username: '. $username. '!</h2>';
+                    echo '<h2 class="headerText">password: '. $password. '!</h2>';
 
                     if (password_verify($password, $hash)) {
                         $_SESSION['loggedin'] = "true";
@@ -56,10 +58,6 @@
             header("Location: login.php");
             exit;
         }
-
-        echo '<h2 class="headerText">username: '. $username. '!</h2>';
-        echo '<h2 class="headerText">password: '. $password. '!</h2>';
-        echo '<h2 class="headerText">hash: '. $hash. '!</h2>';
 
         ?>
     </div>
