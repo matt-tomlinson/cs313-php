@@ -11,11 +11,6 @@
         <?php
         session_start();
 
-        if (isset($_SESSION['loggedin'])) {
-            header("Location: loggedin.php");
-            exit;
-        }
-
         $dbUrl = getenv('DATABASE_URL');
 
         if (empty($dbUrl)) {
@@ -42,7 +37,7 @@
                     echo '<h2 class="headerText">hash: '. $hash. '!</h2>';
                     echo '<h2 class="headerText">password: '. $row['password'] . '!</h2>';
 
-                    if (password_verify($row['password'], $hash)) {
+                    if (password_verify($password, $hash)) {
                         $_SESSION['loggedin'] = "true";
                     } else {
                         header("Location: login.php");
@@ -54,6 +49,12 @@
                 print "<p>error: $ex->getMessage() </p>\n\n";
                 die();
             }
+        }
+
+
+        if (!isset($_SESSION['loggedin'])) {
+            header("Location: login.php");
+            exit;
         }
 
         echo '<h2 class="headerText">username: '. $username. '!</h2>';
