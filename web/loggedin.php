@@ -39,7 +39,7 @@
                     echo '<h2 class="headerText">username: '. $username. '!</h2>';
                     echo '<h2 class="headerText">password: '. $password. '!</h2>';
 
-                    if (password_verify($password, $hash)) {
+                    if (password_verify($row['password'], $hash)) {
                         $_SESSION['loggedin'] = "true";
                     } else {
                         header("Location: login.php");
